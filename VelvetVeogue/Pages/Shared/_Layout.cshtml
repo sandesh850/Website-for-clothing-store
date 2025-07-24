@@ -9,27 +9,100 @@
     <link rel="stylesheet" href="~/VelvetVeogue.styles.css" asp-append-version="true" />
 </head>
 <body>
+    <!--Nav bar-->
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">VelvetVeogue</a>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 NavBarBgColor ">
+
+            <div class="container-fluid ">
+
+                <a class="navbar-brand NavVelvetVogueFont" asp-area="" asp-page="/Index" style="color:yellow">Velvet Veogue</a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
+
+                    <ul class="navbar-nav flex-grow-1 ">
+
+                        <li class="nav-item dropdown"> <!--My modification-->
+
+                            <a class=" nav-link  dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white">ITEMS</a>
+                            <ul class="dropdown-menu">
+
+                                <li >
+                                    <a class="dropdown-item" asp-page="">Add items</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" asp-page="">Update or remove items</a>
+                                </li>
+
+                            </ul>
+                          
+
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link NavbarFontColor" asp-area="" asp-page="/AdminDashboard">Admin Dashboard</a>
                         </li>
                     </ul>
+
                 </div>
+
+                <!--my code-->
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between " style="margin-left:45%">
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link " style="color:white" asp-page="">Inquiries</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " style="color:white" asp-page="">About us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " style="color:white" asp-page="">Contact us</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+
+                            <!--Sign in botton-->
+                            <a class="btn btn-light  dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black;" >Sign in</a>
+                            <ul class="dropdown-menu">
+
+                                <li>
+                                    <a class="dropdown-item " asp-page="">Sign in</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item"  asp-page="">Login Configurations</a>
+                                </li>
+
+                            </ul>
+
+                            <!--Sign in botton-->
+                            <a role="button" class="btn btn-secondary" style="color:white">Sign up</a>
+                        </li>
+
+
+
+                    </ul>
+
+                   
+
+                </div>
+
+              
+
             </div>
+
         </nav>
+
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

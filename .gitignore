@@ -1,0 +1,16 @@
+# Ignore Visual Studio folders
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore Rider IDE settings
+.idea/
+
+# Ignore temporary files
+*.log
+*.tmp
+*.bak

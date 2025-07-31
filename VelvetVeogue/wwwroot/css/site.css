@@ -1,4 +1,4 @@
-/*html {
+html {
   font-size: 14px;
 }
 
@@ -13,14 +13,15 @@
 }
 
 html {
-  position: relative;
+  position:relative;
   min-height: 100%;
 }
 
 body {
   margin-bottom: 60px;
-}*/
+}
 
+/*my codes*/
 .NavBarBgColor{
 
     background-color:black;

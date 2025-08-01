@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/VelvetVeogue.styles.css" asp-append-version="true" />
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
     <!--Font awesome CDN-->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXr4+G+... (shortened)" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,20 +19,20 @@
 <body>
     <!--Nav bar-->
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 NavBarBgColor ">
+        <nav class="navbar navbar-expand-md navbar-toggleable-sm border-bottom box-shadow mb-3 NavBarBgColor ">
 
             <div class="container-fluid ">
 
                 <a class="navbar-brand NavVelvetVogueFont" asp-area="" asp-page="/Index" style="color:yellow">Velvet Veogue</a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
+                <div class="navbar-collapse collapse" id="mainNavbar">
                     <!--Left side links-->
-                    <ul class="navbar-nav me-auto ">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <li class="nav-item dropdown"> <!--My modification-->
 
@@ -50,12 +53,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link NavbarFontColor" asp-area="" asp-page="/AdminDashboard">Admin Dashboard</a>
+                            <a class="nav-link " style="color:white;" asp-area="" asp-page="/AdminDashboard">Admin Dashboard</a>
                         </li>
                     </ul>
 
-
-
+                   
                     <!--Right side links-->
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
@@ -98,53 +100,7 @@
 
                 </div>
 
-                <!--my code / Right side links-->
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between " style="margin-left:45%">
-
-                    @* <!--Right side links-->
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                        <li class="nav-item">
-                            <a class="nav-link " style="color:white" asp-page="">Inquiries</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " style="color:white" asp-page="">About us</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " style="color:white" asp-page="">Contact us</a>
-                        </li>
-
-                        <!--Sign in/ up buttons-->
-                        <li class="nav-item dropdown">
-
-                            <!--Sign in botton-->
-                            <a class="btn btn-light  dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black;" >Sign in</a>
-                            <ul class="dropdown-menu">
-
-                                <li>
-                                    <a class="dropdown-item " asp-page="">Sign in</a>
-                                </li>
-
-                                <li>
-                                    <a class="dropdown-item"  asp-page="">Login Configurations</a>
-                                </li>
-
-                            </ul>
-
-                            <!--Sign up botton-->
-                            <a role="button" class="btn btn-secondary" style="color:white">Sign up</a>
-                        </li>
-
-
-
-                    </ul> *@
-
-                   
-
-                </div>
-
+               
               
 
             </div>

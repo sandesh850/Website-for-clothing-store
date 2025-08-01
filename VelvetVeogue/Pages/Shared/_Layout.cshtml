@@ -28,8 +28,8 @@
                 </button>
 
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
-
-                    <ul class="navbar-nav flex-grow-1 ">
+                    <!--Left side links-->
+                    <ul class="navbar-nav me-auto ">
 
                         <li class="nav-item dropdown"> <!--My modification-->
 
@@ -48,17 +48,16 @@
                           
 
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link NavbarFontColor" asp-area="" asp-page="/AdminDashboard">Admin Dashboard</a>
                         </li>
                     </ul>
 
-                </div>
 
-                <!--my code-->
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between " style="margin-left:45%">
 
-                    <ul class="navbar-nav">
+                    <!--Right side links-->
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
                         <li class="nav-item">
                             <a class="nav-link " style="color:white" asp-page="">Inquiries</a>
@@ -72,6 +71,52 @@
                             <a class="nav-link " style="color:white" asp-page="">Contact us</a>
                         </li>
 
+                        <!--Sign in/ up buttons-->
+                        <li class="nav-item dropdown">
+
+                            <!--Sign in botton-->
+                            <a class="btn btn-light  dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black;">Sign in</a>
+                            <ul class="dropdown-menu">
+
+                                <li>
+                                    <a class="dropdown-item " asp-page="">Sign in</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" asp-page="">Login Configurations</a>
+                                </li>
+
+                            </ul>
+
+                            <!--Sign up botton-->
+                            <a role="button" class="btn btn-secondary" style="color:white">Sign up</a>
+                        </li>
+
+
+
+                    </ul>
+
+                </div>
+
+                <!--my code / Right side links-->
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between " style="margin-left:45%">
+
+                    @* <!--Right side links-->
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link " style="color:white" asp-page="">Inquiries</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " style="color:white" asp-page="">About us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " style="color:white" asp-page="">Contact us</a>
+                        </li>
+
+                        <!--Sign in/ up buttons-->
                         <li class="nav-item dropdown">
 
                             <!--Sign in botton-->
@@ -94,7 +139,7 @@
 
 
 
-                    </ul>
+                    </ul> *@
 
                    
 

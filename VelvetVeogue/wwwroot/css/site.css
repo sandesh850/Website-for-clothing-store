@@ -36,3 +36,21 @@ body {
 
     font-weight:bold;
 }
+
+/*index page promotion card (left side)*/
+@media (max-width:430px) {
+
+    .Position_Promotion_Vard {
+        transform:translateY(150%);
+    }
+}
+
+/*index page center card (welcome note)*/
+@media (max-width:430px){
+
+    .Position{
+        transform:translateY(-400px);
+
+    }
+}
+

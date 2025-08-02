@@ -60,24 +60,34 @@ body {
 @media(max-width:430px)
 {
     .GentsCardPositionChanging {
-        transform:translate(-105px);
-       
+        transform:translateX(-105px);
+        align-content: center;
     }
 }
 
 /*index page category item postion chanching (kids item)*/
 @media(max-width:430px) {
     .KidsCardPositionChanging {
-        transform: translate(-35px);
+        transform: translateX(-35px);
         margin-top:20px;
+        align-content:center;
+    }
+}
+
+/*index page category item postion chanching (kids item)*/
+@media(max-width:330px) {
+    .KidsCardPositionChanging02 {
+        transform: translateX(-10px);
+        margin-top: 20px;
+        align-content: center;
     }
 }
 
 /*index page category item postion chanching (Ladies item)*/
 @media(max-width:430px) {
     .LadiesCardPositionChanging {
-        transform: translate(10px);
-        
+        /*transform: translate(10px);*/
+        align-content: center;
     }
 }
 

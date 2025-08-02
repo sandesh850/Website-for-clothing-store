@@ -50,7 +50,34 @@ body {
 
     .Position{
         transform:translateY(-400px);
+        text-align:center;
 
+    }
+}
+
+
+/*index page category item postion chanching (gents item)*/
+@media(max-width:430px)
+{
+    .GentsCardPositionChanging {
+        transform:translate(-105px);
+       
+    }
+}
+
+/*index page category item postion chanching (kids item)*/
+@media(max-width:430px) {
+    .KidsCardPositionChanging {
+        transform: translate(-35px);
+        margin-top:20px;
+    }
+}
+
+/*index page category item postion chanching (Ladies item)*/
+@media(max-width:430px) {
+    .LadiesCardPositionChanging {
+        transform: translate(10px);
+        
     }
 }
 

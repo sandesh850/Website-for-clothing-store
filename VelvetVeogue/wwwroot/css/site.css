@@ -21,6 +21,11 @@ body {
   margin-bottom: 60px;
 }
 
+
+
+
+
+
 /*my codes*/
 .NavBarBgColor{
 
@@ -118,6 +123,51 @@ body {
         justify-content:center;
     }
 }*/
+
+/*About us page*/
+.clsAboutUs {
+    font-size: 50px;
+    color: black;
+}
+
+@media (max-width:426px){
+
+    .clsAboutUs{
+
+        transform:translate(100px,310px);
+    }
+
+}
+
+.paragraph {
+    font-size: 24px;
+    color: black;
+    margin-top:5%;
+}
+
+@media (max-width:426px) {
+    .paragraph {
+        font-size: 14px;
+        transform: translateY(320px);
+        width: 350px;
+    }
+    
+}
+
+.img {
+    width: 500px;
+    height: 500px;
+}
+
+@media (max-width:426px) {
+    .img {
+        /*visibility:hidden;*/
+        width:400px;
+        height:400px;
+        transform:translate(-210px,-100px);
+       
+    }
+}
 
 
 

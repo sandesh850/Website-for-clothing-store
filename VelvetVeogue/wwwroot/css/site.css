@@ -91,3 +91,32 @@ body {
     }
 }
 
+/*Login page media queries*/
+@media(max-width:426px) /*Configuring Mobile L 425px */
+{
+    .LoginDiv {
+        transform: translate(-20px,30px); /*X , Y*/
+        width: 150%;
+        padding-left: 100px;
+    }
+}
+
+@media(max-width:376px) /*Configuring Mobile M 375px */
+{
+    .LoginDiv {
+        width: 170%;
+       
+        transform: translate(-30px, 30px); /*X , Y*/
+    }
+}
+
+
+@media(min-width:425px) /*Configuring Lap top view L 1441px */
+{
+    .LoginDiv {
+       
+        justify-content:center;
+    }
+}
+
+

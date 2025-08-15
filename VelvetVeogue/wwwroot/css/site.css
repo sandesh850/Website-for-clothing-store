@@ -169,6 +169,31 @@ body {
     }
 }
 
+/*Contact us page*/
+.ContactUS {
+    font-size: 55px;
+}
+
+
+@media (max-width:426px) {
+    .ContactUS {
+        font-size: 40px;
+    }
+
+    .LeftSide {
+        transform: translateY(-20%);
+    }
+
+    .rightSide{
+
+        transform:translate(-50%,70%);
+      
+       
+
+    }
+}
+
+
 
 
 

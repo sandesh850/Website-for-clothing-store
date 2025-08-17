@@ -17,5 +17,7 @@ namespace VelvetVeogue.Data
 
         public DbSet<TblContactUS> Tbl_ContactUS { get; set; }
 
+        public DbSet<Tbl_Inquiries> Tbl_Inquiries { get; set; }
+
     }
 }

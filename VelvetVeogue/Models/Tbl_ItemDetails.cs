@@ -12,15 +12,18 @@ namespace VelvetVeogue.Models
         public int CategoryCode { get; set; } = 0;
 
         [Required]
+        [Column(TypeName ="varchar(30)")]
         public string CategoryName { get; set; } = string.Empty;
 
+        [Column(TypeName = "varchar(30)")]
         public string Name { get; set; } = string.Empty;
 
         [Required]
-       
+        [Column(TypeName = "varchar(20)")]
         public string Color {  get; set; } = string.Empty;
 
         [Required]
+        [Column(TypeName = "varchar(10)")]
         public string size { get; set; } = string.Empty;
 
         [Required]

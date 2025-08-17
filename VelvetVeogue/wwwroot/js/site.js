@@ -33,7 +33,7 @@
 //            $("#valueChanging01").val("Category code");
 //        }
 
-       
+
 //    }
 
 //);
@@ -155,3 +155,47 @@
 //    }
 
 //);
+
+///
+/// Sign up page
+///
+
+$("#btnSave").on("click",
+
+    function () {
+
+        
+        //if(TempData["tbxUsername"] === null) {
+        //    alert("!!Please enter the username!!");
+        //}
+
+        //var username = "";
+        //var password = "";
+        //var confirmPW = "";
+
+        //username = $("#username").val();
+        //password = $("#password").val();
+        //confirmPW = $("#confirmpw").val();
+
+        //if (username === "") {
+        //    alert("!!Please enter the username!!");
+
+        //}
+        //else if (password === "") {
+
+        //    alert("!!Please enter the password!!");
+        //}
+        //else if (confirmPW === "") {
+
+        //    alert("!!Please fill the confirm password!!");
+        //}
+        //else if (password != confirmPW) {
+
+        //    alert("The Password and confirm password does not matched");
+
+        //}
+    }
+
+);
+
+  

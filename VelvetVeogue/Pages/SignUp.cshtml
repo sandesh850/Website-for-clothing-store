@@ -26,7 +26,8 @@
                 <div class="col-12 col-md-12 col-sm-12">
 
                     <label style="font-size:19px;">Username</label>
-                    <input type="text" style="color:grey" class="form-control" placeholder="Username" />
+                    <input type="text" style="color:grey" id="username" asp-for="tbxusername" class="form-control" placeholder="Username" />
+                    <label hidden >Error</label>
 
                 </div>
 
@@ -38,7 +39,7 @@
                 <div class="col-12 col-md-12 col-sm-12">
 
                     <label style="font-size:19px;">Password</label>
-                    <input type="password" style="color:grey" class="form-control" placeholder="Password" />
+                    <input type="password" style="color:grey" class="form-control" asp-for="tbxpassword" id="password" placeholder="Password" />
 
                 </div>
 
@@ -50,7 +51,7 @@
                 <div class="col-12 col-md-12 col-sm-12">
 
                     <label style="font-size:19px;">Confirm Password</label>
-                    <input type="password" style="color:grey" class="form-control" placeholder="Confirm Password" />
+                    <input type="password" style="color:grey" class="form-control" asp-for="tbxConfirmpassword" id="confirmpw" placeholder="Confirm Password" />
 
                 </div>
 
@@ -62,7 +63,7 @@
 
                 <div class="col-12 col-md-12 col-sm-12">
 
-                    <button type="submit" class="btn btn-primary fw-bold" style="background-color:black;border-color:black;color:white;
+                    <button type="submit" class="btn btn-primary fw-bold" id="btnSave" style="background-color:black;border-color:black;color:white;
                     width:100%;margin-bottom:4%;font-size:19px">
                         Save
                     </button>

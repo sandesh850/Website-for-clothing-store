@@ -164,11 +164,7 @@ $("#btnSave").on("click",
 
     function () {
 
-        
-        //if(TempData["tbxUsername"] === null) {
-        //    alert("!!Please enter the username!!");
-        //}
-
+      
         //var username = "";
         //var password = "";
         //var confirmPW = "";

@@ -3,70 +3,75 @@
 @{
 }
 
-<div class="container">
+<form method="post">
 
-    <!--Main row-->
-    <div class="row justify-content-center">
+    <div class="container">
 
-        <div class="col-12 col-md-12 col-sm-12" style="border-style:solid;border-color:black;border-radius:25px;width:50%;margin-top:10%">
+        <!--Main row-->
+        <div class="row justify-content-center">
 
-            <!--Row 01-->
-            <div class="row text-center" style="padding-top:3%">
-                <h2 class="fw-bold col-12 col-md-12 col-sm-12">Sign UP</h2>
-            </div>
+            <div class="col-12 col-md-12 col-sm-12" style="border-style:solid;border-color:black;border-radius:25px;width:50%;margin-top:10%">
 
-            <!--Row 02-->
-            <div class="row justify-content-center" style="padding-top:3%">
-                <div class="col-12 col-md-12 col-sm-12" style="border-style:solid;border-color:black;width:95%;height:2%"></div>
-            </div>
+                <!--Row 01-->
+                <div class="row text-center" style="padding-top:3%">
+                    <h2 class="fw-bold col-12 col-md-12 col-sm-12">Sign UP</h2>
+                </div>
 
-            <!--Row 03-->
-            <div class="row" style="padding-top:3%">
+                <!--Row 02-->
+                <div class="row justify-content-center" style="padding-top:3%">
+                    <div class="col-12 col-md-12 col-sm-12" style="border-style:solid;border-color:black;width:95%;height:2%"></div>
+                </div>
 
-                <div class="col-12 col-md-12 col-sm-12">
+                <!--Row 03-->
+                <div class="row" style="padding-top:3%">
 
-                    <label style="font-size:19px;">Username</label>
-                    <input type="text" style="color:grey" id="username" asp-for="tbxusername" class="form-control" placeholder="Username" />
-                    <label hidden >Error</label>
+                    <div class="col-12 col-md-12 col-sm-12">
+
+                        <label style="font-size:19px;">Username</label>
+                        <input type="text" style="color:grey" id="username" asp-for="tbxusername" class="form-control" placeholder="Username" />
+                        <span asp-validation-for="tbxusername" class="text-danger"></span> <!--Use to display error message-->
+
+                    </div>
 
                 </div>
 
-            </div>
+                <!--Row 04-->
+                <div class="row" style="padding-top:3%">
 
-            <!--Row 04-->
-            <div class="row" style="padding-top:3%">
+                    <div class="col-12 col-md-12 col-sm-12">
 
-                <div class="col-12 col-md-12 col-sm-12">
+                        <label style="font-size:19px;">Password</label>
+                        <input type="password" style="color:grey" class="form-control" asp-for="tbxpassword" id="password" placeholder="Password" />
+                        <span asp-validation-for="tbxpassword" class="text-danger"></span><!--Use to display error message-->
 
-                    <label style="font-size:19px;">Password</label>
-                    <input type="password" style="color:grey" class="form-control" asp-for="tbxpassword" id="password" placeholder="Password" />
-
-                </div>
-
-            </div>
-
-            <!--Row 05 confirm pw-->
-            <div class="row" style="padding-top:3%">
-
-                <div class="col-12 col-md-12 col-sm-12">
-
-                    <label style="font-size:19px;">Confirm Password</label>
-                    <input type="password" style="color:grey" class="form-control" asp-for="tbxConfirmpassword" id="confirmpw" placeholder="Confirm Password" />
+                    </div>
 
                 </div>
 
-            </div>
+                <!--Row 05 confirm pw-->
+                <div class="row" style="padding-top:3%">
+
+                    <div class="col-12 col-md-12 col-sm-12">
+
+                        <label style="font-size:19px;">Confirm Password</label>
+                        <input type="password" style="color:grey" class="form-control" asp-for="tbxConfirmpassword" id="confirmpw" placeholder="Confirm Password" />
+                        <span asp-validation-for="tbxConfirmpassword" class="text-danger"></span><!--Use to display error message-->
+                    </div>
+
+                </div>
 
 
-            <!--Row 06 buttom-->
-            <div class="row" style="padding-top:3%;padding-top:3%">
+                <!--Row 06 buttom-->
+                <div class="row" style="padding-top:3%;padding-top:3%">
 
-                <div class="col-12 col-md-12 col-sm-12">
+                    <div class="col-12 col-md-12 col-sm-12">
 
-                    <button type="submit" class="btn btn-primary fw-bold" id="btnSave" style="background-color:black;border-color:black;color:white;
+                        <button type="submit" class="btn btn-primary fw-bold" id="btnSave" style="background-color:black;border-color:black;color:white;
                     width:100%;margin-bottom:4%;font-size:19px">
-                        Save
-                    </button>
+                            Save
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -76,4 +81,5 @@
 
     </div>
 
-</div>
+</form>
+

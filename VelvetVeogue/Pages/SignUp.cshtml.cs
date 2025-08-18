@@ -51,7 +51,7 @@ namespace VelvetVeogue.Pages
 
             if(RowCount > 0)
             {
-                ModelState.AddModelError("error", "You cant add another login");
+                ModelState.AddModelError("error", "You can't add another login");
             }
             else
             {

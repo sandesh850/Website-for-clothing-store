@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using VelvetVeogue.Data;
 using VelvetVeogue.Models;
@@ -43,8 +44,18 @@ namespace VelvetVeogue.Pages
             _AppDb = appDb;
         }
 
+       
+        public Tbl_ItemDetails? Tbl_ItemDetails_last_record { get; set; }
+        public int CategoryCodeFromDB { get; set; }
+
         public async Task<IActionResult> OnPostAsync()
         {
+            Tbl_ItemDetails_last_record = await _AppDb.Tbl_ItemDetails.OrderByDescending(x => x.Id).FirstOrDefaultAsync();
+
+            if (Tbl_ItemDetails_last_record != null)
+            {
+                CategoryCodeFromDB = Tbl_ItemDetails_last_record.CategoryCode;
+            }
 
 
             return Page();
@@ -52,6 +63,7 @@ namespace VelvetVeogue.Pages
 
         public void OnGet()
         {
+
         }
     }
 }

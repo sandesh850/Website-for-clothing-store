@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 using VelvetVeogue.Data;
 using VelvetVeogue.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace VelvetVeogue.Pages
 {
@@ -23,6 +24,10 @@ namespace VelvetVeogue.Pages
         [Compare("tbxpassword", ErrorMessage ="Password and confirm password do not match")]
         public string? tbxConfirmpassword { get; set; }
 
+
+        [BindProperty]
+        public string? error {  get; set; }
+
         // Connecte to the database through dependency injection 
         private readonly AppDb _AppDb;
 
@@ -31,6 +36,9 @@ namespace VelvetVeogue.Pages
             _AppDb = appDb;
         }
 
+        public List<TblLogin> TblLogin { get; set; }
+        public int RowCount { get; set; }
+
         public async Task<IActionResult> OnPostAsync()
         {
             if(!ModelState.IsValid) // Validation (This code is link with above validations)
@@ -38,17 +46,30 @@ namespace VelvetVeogue.Pages
                 return Page();
             }
 
+            TblLogin = await _AppDb.TblLogins.ToListAsync();
+            RowCount = TblLogin.Count;
 
-            var newTable = new TblLogin
+            if(RowCount > 0)
             {
-                Username = tbxusername,
-                Password = tbxpassword
-            };
+                ModelState.AddModelError("error", "You cant add another login");
+            }
+            else
+            {
+                // Inserting data into the database
+                var newTable = new TblLogin
+                {
+                    Username = tbxusername,
+                    Password = tbxpassword
+                };
 
-            _AppDb.TblLogins.Add(newTable);
-            await _AppDb.SaveChangesAsync();
+                _AppDb.TblLogins.Add(newTable);
+                await _AppDb.SaveChangesAsync();
 
-            return RedirectToPage("/Login");
+                return RedirectToPage("/index");
+            }
+
+                return Page();
+           
         }
 
         public void OnGet()

@@ -194,4 +194,15 @@ $("#btnSave").on("click",
 
 );
 
+// Opening file explorer
+$("#btnbrowes").on("click",
+
+    function () {
+
+        $("#FileInput").trigger("click");
+
+    }
+
+);
+
   

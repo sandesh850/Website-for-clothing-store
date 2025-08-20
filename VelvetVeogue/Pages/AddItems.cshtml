@@ -36,13 +36,16 @@
                     <!--Left side (img)-->
                     <div class="col-6 col-sm-6 col-md-6 justify-content-center" style="padding-top:10%;">
 
+                        <!--img-->
                         <div style="padding-left:5%">
-                            <img src="~/img/Empty.jpg" />
+                            <img id="imgPreview" src="~/img/Empty.jpg" />
                         </div>
 
+                        <!--Browes btn-->
                         <div style="padding-top:5%;padding-left:25%">
 
-                            <button type="submit" class="btn btn-primary fw-bold" style="background-color:black;border-color:black;color:white;
+                            <input type="file" id="FileInput" accept="image/*" hidden />
+                            <button type="button" id="btnbrowes" class="btn btn-primary fw-bold" style="background-color:black;border-color:black;color:white;
                                 width:50%;margin-bottom:4%;font-size:25px">
                                 Browse
 

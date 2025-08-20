@@ -46,24 +46,33 @@ namespace VelvetVeogue.Pages
 
        
         public Tbl_ItemDetails? Tbl_ItemDetails_last_record { get; set; }
-        public int CategoryCodeFromDB { get; set; }
+        //public int CategoryCodeFromDB { get; set; }
 
-        public async Task<IActionResult> OnPostAsync()
+
+        public int CategoryCode { get; set; }
+
+
+
+        public async Task<IActionResult> OnGetAsync()
         {
             Tbl_ItemDetails_last_record = await _AppDb.Tbl_ItemDetails.OrderByDescending(x => x.Id).FirstOrDefaultAsync();
 
-            if (Tbl_ItemDetails_last_record != null)
+            if(Tbl_ItemDetails_last_record == null)
             {
-                CategoryCodeFromDB = Tbl_ItemDetails_last_record.CategoryCode;
+                CategoryCode = CategoryCode + 1;
+            }
+            else if (Tbl_ItemDetails_last_record != null)
+            {
+                CategoryCode = Tbl_ItemDetails_last_record.CategoryCode + 1;
             }
 
 
             return Page();
         }
 
-        public void OnGet()
-        {
+        //public void OnGet()
+        //{
 
-        }
+        //}
     }
 }

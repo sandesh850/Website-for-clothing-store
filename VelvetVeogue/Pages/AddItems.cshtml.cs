@@ -13,6 +13,11 @@ namespace VelvetVeogue.Pages
         /// <summary>
         /// Variables
         /// </summary>
+
+        [BindProperty,Required(ErrorMessage ="Please select a image")]
+        public string img {  get; set; }
+       
+
         [BindProperty]
         [Required(ErrorMessage ="Please type the Category Name")]
         public string tbxCategoryName { get; set; }
@@ -55,6 +60,7 @@ namespace VelvetVeogue.Pages
 
         public async Task<IActionResult> OnGetAsync()
         {
+            // calculating category code
             Tbl_ItemDetails_last_record = await _AppDb.Tbl_ItemDetails.OrderByDescending(x => x.Id).FirstOrDefaultAsync();
 
             if(Tbl_ItemDetails_last_record == null)
@@ -65,6 +71,10 @@ namespace VelvetVeogue.Pages
             {
                 CategoryCode = Tbl_ItemDetails_last_record.CategoryCode + 1;
             }
+
+
+            // Inserting data into the database
+
 
 
             return Page();

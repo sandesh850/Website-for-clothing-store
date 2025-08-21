@@ -38,13 +38,14 @@
 
                         <!--img-->
                         <div style="padding-left:5%">
-                            <img id="imgPreview" src="~/img/Empty.jpg" />
+                            <span asp-validation-for="img" class="text-danger"></span>
+                            <img id="imgPreview" src="" style="width:450px; height:550px;" />
                         </div>
 
                         <!--Browes btn-->
                         <div style="padding-top:5%;padding-left:25%">
 
-                            <input type="file" id="FileInput" accept="image/*" hidden />
+                            <input type="file" id="FileInput" asp-for="img" accept="image/*" hidden />
                             <button type="button" id="btnbrowes" class="btn btn-primary fw-bold" style="background-color:black;border-color:black;color:white;
                                 width:50%;margin-bottom:4%;font-size:25px">
                                 Browse

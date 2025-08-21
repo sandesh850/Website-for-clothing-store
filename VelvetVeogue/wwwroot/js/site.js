@@ -194,15 +194,48 @@ $("#btnSave").on("click",
 
 );
 
+///
+/// Add item page
+///
+
 // Opening file explorer
-$("#btnbrowes").on("click",
+$(document).ready(function () {
 
-    function () {
+    $("#btnbrowes").on("click",
 
-        $("#FileInput").trigger("click");
+        function () {
 
-    }
+            $("#FileInput").trigger("click");
 
-);
+        }
+
+    );
+
+    $("#FileInput").on("change",function (event) {
+
+        var file = event.target.files[0];
+
+        if (file) {
+
+            var fileReader = new FileReader; // JavaScript build in libery that use to reade files
+
+            fileReader.onload = function (e) {
+
+                $("#imgPreview").attr("src", e.target.result);
+            }
+
+            fileReader.readAsDataURL(file);
+
+        }
+        else {
+            alert("No file selected");
+        }
+
+
+    });
+
+});
+
+
 
   

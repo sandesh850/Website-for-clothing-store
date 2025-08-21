@@ -14,7 +14,7 @@ namespace VelvetVeogue.Pages
             _appDb = appDb;
         }
 
-        public List<Tbl_ItemDetails>? Tbl_ItemDetails { get; set; }  
+        public List<Tbl_ItemDetails> Tbl_ItemDetails { get; set; }  
 
         public async Task<IActionResult> OnGetAsync()
         {

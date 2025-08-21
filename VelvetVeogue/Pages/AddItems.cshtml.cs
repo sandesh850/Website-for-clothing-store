@@ -16,7 +16,7 @@ namespace VelvetVeogue.Pages
         /// </summary>
 
         [BindProperty,Required(ErrorMessage ="Please select a image")]
-        public string inputImg {  get; set; } // This variable create after intial creation
+        public IFormFile inputImg {  get; set; } // This variable create after intial creation
        
 
         [BindProperty]

@@ -33,6 +33,34 @@
 
                 <tbody>
 
+                    @foreach(var data in Model.Tbl_ItemDetails)
+                    {
+                        <tr>
+                            <td>@(data.img ?? "No image")</td>
+                            <td>@(data.CategoryCode)</td>
+                            <td>@(data.CategoryName ?? "N/A")</td>
+                            <td>@(data.Name)</td>
+                            <td>@(data.Color ?? "N/A")</td>
+                            <td>@(data.size ?? "N/A")</td>
+                            <td>@(data.AvailableQty)</td>
+                            <td>@(data.Price)</td>
+
+                            <!--Action Buttons-->
+                            <td>
+
+                                <div class="d-flex gap-3">
+
+                                    <button type="button" class="btn btn-warning">Update</button>
+                                    <button type="button" class="btn btn-danger" >Remove</button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    }
+
                 </tbody>
             </table>
 

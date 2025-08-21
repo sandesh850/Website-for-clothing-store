@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using VelvetVeogue.Data;
@@ -15,7 +16,7 @@ namespace VelvetVeogue.Pages
         /// </summary>
 
         [BindProperty,Required(ErrorMessage ="Please select a image")]
-        public string img {  get; set; }
+        public string inputImg {  get; set; } // This variable create after intial creation
        
 
         [BindProperty]
@@ -32,13 +33,13 @@ namespace VelvetVeogue.Pages
         public string tbxsizes { get; set; }
 
         [BindProperty,Required(ErrorMessage ="Please enter the Available Qty")]
-        public int? tbxAvailableQTY { get; set; }
+        public int tbxAvailableQTY { get; set; }
 
 
         [BindProperty, Required(ErrorMessage = "Please enter the Price")]
-        public double? tbxprice { get; set; }
+        public double tbxprice { get; set; }
 
-
+      
         /// <summary>
         /// Dependency injectios
         /// </summary>
@@ -50,13 +51,16 @@ namespace VelvetVeogue.Pages
         }
 
        
+        // use to calculate category code
         public Tbl_ItemDetails? Tbl_ItemDetails_last_record { get; set; }
         //public int CategoryCodeFromDB { get; set; }
 
 
-        public int CategoryCode { get; set; }
 
+        // use to calculate category code
+        public int tbxCategoryCode { get; set; }
 
+       
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -65,19 +69,50 @@ namespace VelvetVeogue.Pages
 
             if(Tbl_ItemDetails_last_record == null)
             {
-                CategoryCode = CategoryCode + 1;
+                tbxCategoryCode = tbxCategoryCode + 1;
             }
             else if (Tbl_ItemDetails_last_record != null)
             {
-                CategoryCode = Tbl_ItemDetails_last_record.CategoryCode + 1;
+                tbxCategoryCode = Tbl_ItemDetails_last_record.CategoryCode + 1;
             }
-
-
-            // Inserting data into the database
 
 
 
             return Page();
+
+        }
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            // Validation (This code is link with above validations)
+            if (!ModelState.IsValid)
+            {
+               
+                return RedirectToPage("/Inquiries");
+            }
+            else
+            {
+                var TblItemDetail = new Tbl_ItemDetails
+                {
+                    CategoryCode = tbxCategoryCode,
+                    CategoryName = tbxCategoryName,
+                    Name = tbxName,
+                    Color = tbxcolor,
+                    size = tbxsizes,
+                    AvailableQty = tbxAvailableQTY,
+                    Price = tbxprice,
+                    img = inputImg,
+
+                };
+
+                _AppDb.Tbl_ItemDetails.Add(TblItemDetail);
+                await _AppDb.SaveChangesAsync();
+
+                return RedirectToPage("/index");
+            }
+
+            // Inserting data into the database
+           
         }
 
         //public void OnGet()

@@ -9,6 +9,9 @@ namespace VelvetVeogue.Models
         public int Id { get; set; }
 
         [Required]
+        public string? img {  get; set; }
+
+        [Required]
         public int CategoryCode { get; set; } = 0;
 
         [Required]

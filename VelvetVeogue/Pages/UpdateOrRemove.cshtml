@@ -36,7 +36,7 @@
                     @foreach(var data in Model.Tbl_ItemDetails)
                     {
                         <tr>
-                            <td>@(data.img ?? "No image")</td>
+                            @* <td>@(data.img ?? "No image")</td> *@
                             <td>@(data.CategoryCode)</td>
                             <td>@(data.CategoryName ?? "N/A")</td>
                             <td>@(data.Name)</td>

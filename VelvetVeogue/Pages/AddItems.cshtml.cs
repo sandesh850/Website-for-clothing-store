@@ -16,8 +16,8 @@ namespace VelvetVeogue.Pages
         /// </summary>
 
         [BindProperty,Required(ErrorMessage ="Please select a image")]
-        public IFormFile inputImg {  get; set; } // This variable create after intial creation
-       
+        public IFormFile? inputImg {  get; set; } // This variable create after intial creation || use for image uploading
+
 
         [BindProperty]
         [Required(ErrorMessage ="Please type the Category Name")]
@@ -96,6 +96,17 @@ namespace VelvetVeogue.Pages
                 tbxCategoryCode = Tbl_ItemDetails_last_record.CategoryCode + 1;
             }
 
+            // Special code | converting image into byte
+            byte[]? imgBytes = null;
+
+            if(inputImg != null)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    await inputImg.CopyToAsync(ms);
+                    imgBytes = ms.ToArray();
+                }
+            }
 
             // Validation (This code is link with above validations)
             if (!ModelState.IsValid)
@@ -114,7 +125,7 @@ namespace VelvetVeogue.Pages
                     size = tbxsizes,
                     AvailableQty = tbxAvailableQTY,
                     Price = tbxprice,
-                    img = inputImg,
+                    
 
                 };
 

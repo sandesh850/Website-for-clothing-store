@@ -5,7 +5,7 @@
 namespace VelvetVeogue.Migrations
 {
     /// <inheritdoc />
-    public partial class initialCreate : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -26,18 +26,33 @@ namespace VelvetVeogue.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Tbl_Inquiries",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    sibject = table.Column<string>(type: "varchar(50)", nullable: false),
+                    Message = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tbl_Inquiries", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Tbl_ItemDetails",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CategoryCode = table.Column<int>(type: "int", nullable: false),
-                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Color = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    size = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CategoryName = table.Column<string>(type: "varchar(30)", nullable: false),
+                    Name = table.Column<string>(type: "varchar(30)", nullable: false),
+                    Color = table.Column<string>(type: "varchar(20)", nullable: false),
+                    size = table.Column<string>(type: "varchar(10)", nullable: false),
                     AvailableQty = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "money", nullable: false)
+                    Price = table.Column<decimal>(type: "money", nullable: false),
+                    img = table.Column<byte[]>(type: "varbinary(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -64,6 +79,9 @@ namespace VelvetVeogue.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Tbl_ContactUS");
+
+            migrationBuilder.DropTable(
+                name: "Tbl_Inquiries");
 
             migrationBuilder.DropTable(
                 name: "Tbl_ItemDetails");

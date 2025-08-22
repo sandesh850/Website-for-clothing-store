@@ -8,8 +8,6 @@ namespace VelvetVeogue.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        public byte[]? img {  get; set; }
 
         [Required]
         public int CategoryCode { get; set; } = 0;
@@ -35,6 +33,9 @@ namespace VelvetVeogue.Models
         [Required]
         [Column(TypeName ="money")]
         public double Price { get; set; } = 0;
+
+        [Required]
+        public byte[]? img { get; set; }
 
     }
 }

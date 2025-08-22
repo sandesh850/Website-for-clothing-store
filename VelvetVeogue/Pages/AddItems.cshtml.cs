@@ -125,7 +125,7 @@ namespace VelvetVeogue.Pages
                     size = tbxsizes,
                     AvailableQty = tbxAvailableQTY,
                     Price = tbxprice,
-                    
+                    img = imgBytes,
 
                 };
 

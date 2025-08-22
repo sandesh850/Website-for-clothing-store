@@ -36,7 +36,16 @@
                     @foreach(var data in Model.Tbl_ItemDetails)
                     {
                         <tr>
-                            @* <td>@(data.img ?? "No image")</td> *@
+                            <td>@if(data.img != null && data.img.Length > 0 )
+                                {
+                                    <img src="data:image/png;base64,@Convert.ToBase64String(data.img)" style="width:80px;height:80px;object-fit:cover" alt="Item Image" />
+                                }
+                                else
+                                {
+                                    <span>No Image Found</span>
+                                }
+
+                            </td>
                             <td>@(data.CategoryCode)</td>
                             <td>@(data.CategoryName ?? "N/A")</td>
                             <td>@(data.Name)</td>

@@ -5,7 +5,7 @@
 namespace VelvetVeogue.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class initializing : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -45,7 +45,7 @@ namespace VelvetVeogue.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryCode = table.Column<int>(type: "int", nullable: false),
+                    ItemCode = table.Column<int>(type: "int", nullable: false),
                     CategoryName = table.Column<string>(type: "varchar(30)", nullable: false),
                     Name = table.Column<string>(type: "varchar(30)", nullable: false),
                     Color = table.Column<string>(type: "varchar(20)", nullable: false),

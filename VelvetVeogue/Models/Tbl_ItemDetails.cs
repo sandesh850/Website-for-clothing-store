@@ -10,7 +10,7 @@ namespace VelvetVeogue.Models
 
 
         [Required]
-        public int CategoryCode { get; set; } = 0;
+        public int ItemCode { get; set; } = 0;
 
         [Required]
         [Column(TypeName ="varchar(30)")]

@@ -17,7 +17,7 @@
                     <tr>
 
                         <th scope="col">Image</th>
-                        <th scope="col"><strong>Category Code</strong></th>
+                        <th scope="col"><strong>Item Code</strong></th>
                         <th scope="col"><strong>Category Name</strong></th>
                         <th scope="col"><strong>Name</strong></th>
                         <th scope="col"><strong>Color</strong></th>
@@ -46,7 +46,7 @@
                                 }
 
                             </td>
-                            <td>@(data.CategoryCode)</td>
+                            <td>@(data.ItemCode)</td>
                             <td>@(data.CategoryName ?? "N/A")</td>
                             <td>@(data.Name)</td>
                             <td>@(data.Color ?? "N/A")</td>
@@ -59,7 +59,7 @@
 
                                 <div class="d-flex gap-3">
 
-                                    <a type="button" asp-page="UpdateItemDetails" class="btn btn-warning">Update</a>
+                                    <a type="button" asp-page="UpdateItemDetails" asp-route-id="@data.ItemCode" class="btn btn-warning">Update</a>
                                     <button type="button" class="btn btn-danger" >Remove</button>
 
                                 </div>

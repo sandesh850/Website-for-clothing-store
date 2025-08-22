@@ -98,9 +98,6 @@ namespace VelvetVeogue.Migrations
                     b.Property<int>("AvailableQty")
                         .HasColumnType("int");
 
-                    b.Property<int>("CategoryCode")
-                        .HasColumnType("int");
-
                     b.Property<string>("CategoryName")
                         .IsRequired()
                         .HasColumnType("varchar(30)");
@@ -108,6 +105,9 @@ namespace VelvetVeogue.Migrations
                     b.Property<string>("Color")
                         .IsRequired()
                         .HasColumnType("varchar(20)");
+
+                    b.Property<int>("ItemCode")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()

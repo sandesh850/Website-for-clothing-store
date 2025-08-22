@@ -11,8 +11,8 @@ using VelvetVeogue.Data;
 namespace VelvetVeogue.Migrations
 {
     [DbContext(typeof(AppDb))]
-    [Migration("20250822032524_Initial")]
-    partial class Initial
+    [Migration("20250822050251_initializing")]
+    partial class initializing
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -101,9 +101,6 @@ namespace VelvetVeogue.Migrations
                     b.Property<int>("AvailableQty")
                         .HasColumnType("int");
 
-                    b.Property<int>("CategoryCode")
-                        .HasColumnType("int");
-
                     b.Property<string>("CategoryName")
                         .IsRequired()
                         .HasColumnType("varchar(30)");
@@ -111,6 +108,9 @@ namespace VelvetVeogue.Migrations
                     b.Property<string>("Color")
                         .IsRequired()
                         .HasColumnType("varchar(20)");
+
+                    b.Property<int>("ItemCode")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()

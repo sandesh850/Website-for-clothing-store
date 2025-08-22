@@ -39,13 +39,13 @@
                         <!--img-->
                         <div style="padding-left:5%">
                             @* <span asp-validation-for="inputImg" class="text-danger"></span> *@
-                            <img id="imgPreview" src="" style="width:450px; height:550px;" />
+                            <img id="imgPreview" src="data:image/png;base64,@Convert.ToBase64String(Model.ItemDetails.img)" style="width:450px; height:550px;" />
                         </div>
 
                         <!--Browes btn-->
                         <div style="padding-top:5%;padding-left:25%">
 
-                            <input type="file" id="FileInput" @* asp-for="inputImg" *@ accept="image/*" hidden />
+                            <input type="file" id="FileInput" asp-for="ItemDetails.img" accept="image/*" hidden />
                             <button type="button" id="btnbrowes" class="btn btn-primary fw-bold" style="background-color:black;border-color:black;color:white;
                                 width:50%;margin-bottom:4%;font-size:25px">
                                 Browse
@@ -66,8 +66,8 @@
 
                             <div class="col-12 col-sm-12 col-md-12">
 
-                                <label style="font-size:20px;">Category code</label>
-                                <input type="text" class="form-control" id="" placeholder="Category code" @* asp-for="tbxCategoryCode" *@ style="color:grey" />
+                                <label style="font-size:20px;">Item code</label>
+                                <input type="text" class="form-control" id="" placeholder="Item code" asp-for="ItemDetails.ItemCode" style="color:grey" />
 
 
                             </div>
@@ -79,7 +79,7 @@
                             <div class="col-12 col-sm-12 col-md-12">
 
                                 <label style="font-size:20px;">Category Name</label>
-                                <input type="text" class="form-control" id="" @* asp-for="tbxCategoryName"  *@placeholder="Category Name" style="color:grey" />
+                                <input type="text" class="form-control" id="" asp-for="ItemDetails.CategoryName"  placeholder="Category Name" style="color:grey" />
                                @*  <span asp-validation-for="tbxCategoryName" class="text-danger"></span> *@
 
                             </div>
@@ -91,7 +91,7 @@
                             <div class="col-12 col-sm-12 col-md-12">
 
                                 <label style="font-size:20px;">Name (optional)</label>
-                                <input type="text" class="form-control" id="" placeholder="Name" @* asp-for="tbxName" *@ style="color:grey" />
+                                <input type="text" class="form-control" id="" placeholder="Name" asp-for="ItemDetails.Name" style="color:grey" />
 
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                             <div class="col-12 col-sm-12 col-md-12">
 
                                 <label style="font-size:20px;">Color</label>
-                                <input type="text" class="form-control" id="" @* asp-for="tbxcolor" *@ placeholder="Color" style="color:grey" />
+                                <input type="text" class="form-control" id="" asp-for="ItemDetails.Color" placeholder="Color" style="color:grey" />
                                @*  <span asp-validation-for="tbxcolor" class="text-danger"></span> *@
 
                             </div>
@@ -114,7 +114,7 @@
                             <div class="col-12 col-sm-12 col-md-12">
 
                                 <label style="font-size:20px;">Size</label>
-                                <input type="text" class="form-control" @* asp-for="tbxsizes" *@ id="" placeholder="Size" style="color:grey" />
+                                <input type="text" class="form-control" asp-for="ItemDetails.size" id="" placeholder="Size" style="color:grey" />
                                @*  <span asp-validation-for="tbxsizes" class="text-danger"></span> *@
 
                             </div>
@@ -127,7 +127,7 @@
                             <div class="col-12 col-sm-12 col-md-12">
 
                                 <label style="font-size:20px;">Available Qty</label>
-                                <input type="text" class="form-control" id="" @* asp-for="tbxAvailableQTY" *@ placeholder="Available Qty" style="color:grey" />
+                                <input type="text" class="form-control" id="" asp-for="ItemDetails.AvailableQty" placeholder="Available Qty" style="color:grey" />
                                @*  <span asp-validation-for="tbxAvailableQTY" class="text-danger"></span> *@
 
                             </div>
@@ -139,7 +139,7 @@
                             <div class="col-12 col-sm-12 col-md-12">
 
                                 <label style="font-size:20px;">Price</label>
-                                <input type="text" class="form-control" id="" @* asp-for="tbxprice" *@ placeholder="Price" style="color:grey" />
+                                <input type="text" class="form-control" id="" asp-for="ItemDetails.Price" placeholder="Price" style="color:grey" />
                                 @* <span asp-validation-for="tbxprice" class="text-danger"></span> *@
 
                             </div>

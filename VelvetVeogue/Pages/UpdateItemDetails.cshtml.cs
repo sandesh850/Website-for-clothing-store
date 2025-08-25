@@ -42,6 +42,7 @@ namespace VelvetVeogue.Pages
             Existing_ItemDetails.size = ItemDetails.size;
             Existing_ItemDetails.AvailableQty = ItemDetails.AvailableQty;
             Existing_ItemDetails.Price = ItemDetails.Price;
+            Existing_ItemDetails.ItemType = ItemDetails.ItemType;
 
             // updating image
             if(NewImage != null && NewImage.Length > 0)

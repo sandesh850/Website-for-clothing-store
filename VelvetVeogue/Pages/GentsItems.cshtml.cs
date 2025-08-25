@@ -15,15 +15,15 @@ namespace VelvetVeogue.Pages
         }
 
        
-        public string CategoryName { get; set; }
+        //public string CategoryType { get; set; }
 
         public List<Tbl_ItemDetails> Tbl_ItemDetails { get; set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
-            Tbl_ItemDetails = _appDb.Tbl_ItemDetails.ToList();
+            Tbl_ItemDetails =  _appDb.Tbl_ItemDetails.Where(x => x.ItemType == "G").ToList();
 
-            CategoryName = Tbl_ItemDetails[0].CategoryName;
+            //CategoryName = Tbl_ItemDetails[0].CategoryName;
 
             return Page();
         }

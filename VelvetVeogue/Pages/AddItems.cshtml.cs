@@ -39,6 +39,9 @@ namespace VelvetVeogue.Pages
         [BindProperty, Required(ErrorMessage = "Please enter the Price")]
         public double tbxprice { get; set; }
 
+        [BindProperty, Required(ErrorMessage = "Please enter the Item Type")]
+        public string tbxItemType { get; set; }
+
 
         /// <summary>
         /// Dependency injectios
@@ -112,7 +115,7 @@ namespace VelvetVeogue.Pages
             if (!ModelState.IsValid)
             {
 
-                return RedirectToPage("/Inquiries");
+                return RedirectToPage("/AddItems");
             }
             else
             {
@@ -126,13 +129,14 @@ namespace VelvetVeogue.Pages
                     AvailableQty = tbxAvailableQTY,
                     Price = tbxprice,
                     img = imgBytes,
+                    ItemType = tbxItemType,
 
                 };
 
                 _AppDb.Tbl_ItemDetails.Add(TblItemDetail);
                 await _AppDb.SaveChangesAsync();
 
-                return RedirectToPage("/index");
+                return RedirectToPage("/AddItems");
             }
 
             // Inserting data into the database

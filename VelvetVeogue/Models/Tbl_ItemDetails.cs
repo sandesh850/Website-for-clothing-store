@@ -37,5 +37,8 @@ namespace VelvetVeogue.Models
         [Required]
         public byte[]? img { get; set; }
 
+        [Required,Column(TypeName ="varchar(20)")]
+        public string? ItemType { get; set; }
+
     }
 }

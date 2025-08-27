@@ -9,13 +9,13 @@ namespace VelvetVeogue.Pages
     public class ContactUSModel : PageModel
     {
         [BindProperty,Required(ErrorMessage ="Please Type a Full Name")]
-        public string tbxFullName { get; set; }
+        public string tbxFullName { get; set; } =string.Empty;
 
         [BindProperty, Required(ErrorMessage = "Please Type a Email")]
-        public string tbxEmail { get; set; }
+        public string tbxEmail { get; set; } = string.Empty;
 
         [BindProperty, Required(ErrorMessage = "Please Type the Message")]
-        public string tbxMessage { get; set; }
+        public string tbxMessage { get; set; } = string.Empty;
 
 
 

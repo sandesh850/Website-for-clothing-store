@@ -10,9 +10,90 @@
         <div class="row justify-content-center">
 
             <!--Border (card)-->
-            <div class="col-12" style="border-style:solid;border-color:black;width:50%">
+            <div class="col-12" style="border-style:solid;border-color:black;width:50%;border-radius:25px">
+
+                <!--Email-->
+                <div class="row pt-3">
+
+                    <!--lblEmail-->
+                    <div class="col-3">
+                        <label>Email</label>
+
+                    </div>
+
+                    <!--tbxEmail-->
+                    <div class="col-9">
+                        <input type="email" placeholder="Email" class="form-control" />
+                    </div>
+
+                </div>
+
+                <!--Address-->
+                <div class="row pt-3">
+
+                    <!--lblAddress-->
+                    <div class="col-3">
+                        <label>Address</label>
+
+                    </div>
+
+                    <!--tbxAddress-->
+                    <div class="col-9">
+                        <textarea placeholder="Address" rows="3" style="resize:none" class="form-control" ></textarea>
+                    </div>
+
+                </div>
 
 
+                <!--Phone no-->
+                <div class="row pt-3">
+
+                    <!--lblContact No-->
+                    <div class="col-3">
+                        <label>Contact No</label>
+
+                    </div>
+
+                    <!--tbxContact No-->
+                    <div class="col-9">
+                        <input type="text" placeholder="Contact No" class="form-control" />
+                    </div>
+
+                </div>
+
+                <!--Payment Method-->
+                <div class="row pt-3 pb-3">
+
+                    <!--lblPayment method-->
+                    <div class="col-3">
+                        <label>Payment method</label>
+
+                    </div>
+
+                    <!--tbxPayment method-->
+                    <div class="col-9">
+                        <select class="form-select" id="SelectedPaymentMethod">
+                            <option disabled selected>Please select</option>
+                            <option>Cash On Deliver</option>
+                            <option>Online Payment</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!--hr line-->
+                <div class="row" >
+                    <div class="col-12">
+                        <hr/>
+                    </div>
+                </div>
+
+                <!--Selected Payment Method-->
+                <div class="row pb-3" id="BottomPartOfTheCard">
+
+                    
+
+                </div>
 
             </div>
 
@@ -20,5 +101,6 @@
 
     </div>
 
+   
 </form>
 

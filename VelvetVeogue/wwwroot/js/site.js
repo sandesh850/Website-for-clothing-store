@@ -236,6 +236,23 @@ $(document).ready(function () {
 
 });
 
+//Payment andorder placing page
+$("#SelectedPaymentMethod").on("onchange", function () {
+
+    var selectedMethod = $("#SelectedPaymentMethod").val()
+
+    if (selectedMethod === "Cash On Deliver") {
+
+        $("#BottomPartOfTheCard").html('<div class="col-12 text-end">
+                                        < button type = "submit" class= "btn btn-primary" >
+                                        Place Order
+                                        </button >
+                       
+                                        </div > ');
+
+    }
+
+});
 
 
   

@@ -236,7 +236,7 @@ $(document).ready(function () {
 
 });
 
-//Payment andorder placing page
+//Payment and order placing page
 $("#SelectedPaymentMethod").on("change", function () {
 
     var selectedMethod = $("#SelectedPaymentMethod").val()

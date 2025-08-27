@@ -237,19 +237,69 @@ $(document).ready(function () {
 });
 
 //Payment andorder placing page
-$("#SelectedPaymentMethod").on("onchange", function () {
+$("#SelectedPaymentMethod").on("change", function () {
 
     var selectedMethod = $("#SelectedPaymentMethod").val()
 
-    if (selectedMethod === "Cash On Deliver") {
+    if (selectedMethod === "Cash On Delivery") {
 
-        $("#BottomPartOfTheCard").html('<div class="col-12 text-end">
-                                        < button type = "submit" class= "btn btn-primary" >
-                                        Place Order
-                                        </button >
+        $("#BottomPartOfTheCard").html(
+            '<div class="col-12 text-end">' +
+            ' <button type="submit" class="btn btn-primary"> Place Order </button> ' +
+            '</div > '
+        );
+
+
+
+
+
+    }
+    else if (selectedMethod === "Online Payment") {
+
+        $("#BottomPartOfTheCard").html(
+           
+            '<div class="col-12">'
+
+                      
+                        +'<div class="row">'
+                            +'<div class="col-3">'
+                               +' <label>Card No</label>'
+                            +'</div>'
+                           +' <div class="col-9">'
+                               +' <input type="text" placeholder="Card No" class="form-control"/>'
+                            +'</div>'
+                        +'</div>'
+
                        
-                                        </div > ');
+                        +'<div class="row pt-3">'
+                           
+                            +'<div class="col-3">'
+                               +' <label>Date</label>'
+                            +'</div>'
+                            +'<div class="col-3">'
+                                +'<input type="text" placeholder="MM/YY" class="form-control" />'
+                           +' </div>'
 
+                            +'<!--CVC NO-->'
+                            +'<div class="col-2">'
+                                +'<label>CVC NO</label>'
+                            +'</div>'
+                           +' <div class="col-4">'
+                                +'<input type="text" style="width:40%" placeholder="000" class="form-control" />'
+                            +'</div>'
+
+                        +'</div>'
+
+                    
+                    +'<div class="row pt-4 text-end">'
+                        +'<div class="col-12">'
+                            +'<button type="submit" style="width:30%" class="btn btn-primary"> Place Order </button>'
+                        +'</div>'
+
+                     +'</div>'
+                       
+                +'</div > '
+        );
     }
 
 });

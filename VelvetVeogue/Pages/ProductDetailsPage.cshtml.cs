@@ -16,10 +16,10 @@ namespace VelvetVeogue.Pages
 
         public List<Tbl_ItemDetails>? Tbl_ItemDetails { get; set; }
 
-        public Task<IActionResult> OnGetAsync()
-        {
+        //public Task<IActionResult> OnGetAsync()
+        //{
 
-        }
+        //}
 
         //public void OnGet()
         //{

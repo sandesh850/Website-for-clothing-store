@@ -3,7 +3,7 @@
 @{
 }
 
-<form method="post">
+<form method="post" asp-page="PaymentAndOrderConfirmation">
 
     <div class="container">
         <!--Main row-->
@@ -11,7 +11,7 @@
 
             <!--Left side (img)-->
             <div class="col-6 col-md-6 col-sm-6">
-                <img src="~/img/Empty.jpg" />
+                <img src="data:image/png;base64,@Convert.ToBase64String(Model.Tbl_ItemDetails.img)" />
 
             </div>
 
@@ -21,15 +21,15 @@
                 <!--Sub row 01-->
                 <div class="row" style="padding-right:71%">
                     <div class="col-12 col-md-12 col-sm-12" >
-                        <label >Gents Item</label>
+                        <label>@Model.ItemType</label>
 
                     </div>
                 </div>
 
                 <!--Sub row 02-->
-                <div class="row" style="padding-right:65%">
+                <div class="row" style="padding-right:70%">
                     <div class="col-12 col-md-12 col-sm-12">
-                        <label class="fw-bold" style="font-size:23px">@Model.Tbl_ItemDetails.CategoryName</label>
+                        <h3 class="fw-bold">@Model.Tbl_ItemDetails.CategoryName</h3>
 
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                 <!--Sub row 03-->
                 <div class="row" style="padding-right:75%;padding-top:5%">
                     <div class="col-12 col-md-12 col-sm-12">
-                        <label>@Model.Tbl_ItemDetails.Price</label>
+                        <label>Rs @Model.Tbl_ItemDetails.Price</label>
 
                     </div>
                 </div>
@@ -55,11 +55,11 @@
 
                     <div class="col-12 col-md-12 col-sm-12 gap-5">
 
-                        <button class="fw-bold btn btn-secondary" style="font-size:23px;">@Model.</button>
+                        <button class="fw-bold btn btn-secondary" style="font-size:23px;">@Model.represent_sizes01</button>
 
-                        <button class="fw-bold btn btn-secondary" style="font-size:23px;">M</button>
+                        <button class="fw-bold btn btn-secondary" style="font-size:23px;">@Model.represent_sizes02</button>
 
-                        <button class="fw-bold btn btn-secondary" style="font-size:23px;">L</button>
+                        <button class="fw-bold btn btn-secondary" style="font-size:23px;">@Model.represent_sizes03</button>
 
                     </div>
 
@@ -85,7 +85,7 @@
                 <!--Sub row 08 | button -->
                 <div class="row" style="padding-left:7%;padding-top:6%">
                     <div class="col-12 col-md-12 col-sm-12">
-                        <a asp-page="PaymentAndOrderConfirmation" style="width:90%;border-radius:25px" class="btn btn-primary">Buy Now</a>
+                        <button type="submit"  style="width:90%;border-radius:25px" class="btn btn-primary">Buy Now</button>
 
                     </div>
                 </div>

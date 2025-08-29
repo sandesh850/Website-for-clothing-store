@@ -21,24 +21,66 @@ namespace VelvetVeogue.Pages
         public string sizes { get; set; }
 
         [BindProperty]
-        public string represent_sizes { get; set; }
+        public string represent_sizes01 { get; set; }
+
+
+        [BindProperty]
+        public string represent_sizes02 { get; set; }
+
+
+        [BindProperty]
+        public string represent_sizes03 { get; set; }
+
+
+        [BindProperty]
+        public string ItemType { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
             Tbl_ItemDetails = await _appDb.Tbl_ItemDetails.FindAsync(id);
 
-            // Split by comma and trim spaces
-            sizes = Tbl_ItemDetails.size;
-
-            var filterSizes = sizes.Split(',').Select(s => s.Trim()).ToList();
-
-            foreach(var filterSize in filterSizes)
+            //checking item type
+            if(Tbl_ItemDetails != null)
             {
-                if(filterSize == "S")
+                if (Tbl_ItemDetails.ItemType == "G")
                 {
-                    represent_sizes = "S";
+                    ItemType = "Gent Item";
+
+                }
+                else if (Tbl_ItemDetails.ItemType == "L")
+                {
+                    ItemType = "Ladies Item";
+                }
+                else if (Tbl_ItemDetails.ItemType == "K")
+                {
+                    ItemType = "Kids Item";
+                }
+
+
+                // Split by comma and trim spaces
+                sizes = Tbl_ItemDetails.size;
+
+                var filterSizes = sizes.Split(',').Select(s => s.Trim()).ToList();
+
+                foreach (var data in filterSizes)
+                {
+                    if (data == "S")
+                    {
+                        represent_sizes01 = "S";
+                    }
+                    else if (data == "M")
+                    {
+                        represent_sizes02 = "M";
+                    }
+                    else if (data == "L")
+                    {
+                        represent_sizes03 = "L";
+                    }
                 }
             }
+           
+
+           
 
 
 

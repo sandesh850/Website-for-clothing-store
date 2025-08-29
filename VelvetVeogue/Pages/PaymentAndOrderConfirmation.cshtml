@@ -23,7 +23,8 @@
 
                     <!--tbxEmail-->
                     <div class="col-9">
-                        <input type="email" placeholder="Email" class="form-control" />
+                        <input type="email" placeholder="Email" asp-for="tbxEmail" class="form-control" />
+                        <span asp-validation-for="tbxEmail" class="text-danger"></span>
                     </div>
 
                 </div>
@@ -39,7 +40,8 @@
 
                     <!--tbxAddress-->
                     <div class="col-9">
-                        <textarea placeholder="Address" rows="3" style="resize:none" class="form-control" ></textarea>
+                        <textarea placeholder="Address" asp-for="tbxaddress" rows="3" style="resize:none" class="form-control" ></textarea>
+                        <span asp-validation-for="tbxaddress" class="text-danger"></span>
                     </div>
 
                 </div>
@@ -56,7 +58,8 @@
 
                     <!--tbxContact No-->
                     <div class="col-9">
-                        <input type="text" placeholder="Contact No" class="form-control" />
+                        <input type="text" placeholder="Contact No" asp-for="tbxContactNo" class="form-control" />
+                        <span asp-validation-for="tbxContactNo" class="text-danger"></span>
                     </div>
 
                 </div>
@@ -72,11 +75,12 @@
 
                     <!--tbxPayment method-->
                     <div class="col-9">
-                        <select class="form-select" id="SelectedPaymentMethod">
+                        <select class="form-select" asp-for="cmbPaymentMethod" id="SelectedPaymentMethod">
                             <option disabled selected>Please select</option>
                             <option>Cash On Delivery</option>
                             <option>Online Payment</option>
                         </select>
+                        
                     </div>
 
                 </div>

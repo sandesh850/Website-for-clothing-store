@@ -109,7 +109,9 @@ namespace VelvetVeogue.Pages
                 price = Tbl_ItemDetails.Price,
                 sizes = tbxSizesUserWant,
                 color = Tbl_ItemDetails.Color,
-                Image = Tbl_ItemDetails.img
+                Image = Tbl_ItemDetails.img,
+                Public_variable_ItemType = ItemType 
+                
             };
 
             return RedirectToPage("PaymentAndOrderConfirmation");

@@ -19,5 +19,8 @@ namespace VelvetVeogue.PublicItems
         [BindProperty]
         public string? color { get; set; }
 
+        [BindProperty]
+        public string? Public_variable_ItemType { get; set; }
+
     }
 }

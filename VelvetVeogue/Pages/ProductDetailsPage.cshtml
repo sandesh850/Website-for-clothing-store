@@ -3,7 +3,7 @@
 @{
 }
 
-<form method="post" asp-page="PaymentAndOrderConfirmation">
+<form method="post">
 
     <div class="container">
         <!--Main row-->
@@ -11,7 +11,12 @@
 
             <!--Left side (img)-->
             <div class="col-6 col-md-6 col-sm-6">
-                <img src="data:image/png;base64,@Convert.ToBase64String(Model.Tbl_ItemDetails.img)" />
+                @if(Model.Tbl_ItemDetails.img != null)
+                {
+                    <img src="data:image/png;base64,@Convert.ToBase64String(Model.Tbl_ItemDetails.img)" />
+                }
+                
+                
 
             </div>
 
@@ -43,9 +48,9 @@
                 </div>
 
                 <!--Sub row 04-->
-                <div class="row" style="padding-right:77%;padding-top:5%">
+                <div class="row" style="padding-right:60%;padding-top:5%">
                     <div class="col-12 col-md-12 col-sm-12">
-                        <label class="fw-bold" style="font-size:23px">Size</label>
+                        <label class="fw-bold" style="font-size:23px">Available Size</label>
 
                     </div>
                 </div>
@@ -55,18 +60,29 @@
 
                     <div class="col-12 col-md-12 col-sm-12 gap-5">
 
-                        <button class="fw-bold btn btn-secondary" style="font-size:23px;">@Model.represent_sizes01</button>
+                        <label class="fw-bold btn btn-secondary" style="font-size:23px;">@Model.represent_sizes01</label>
 
-                        <button class="fw-bold btn btn-secondary" style="font-size:23px;">@Model.represent_sizes02</button>
+                        <label class="fw-bold btn btn-secondary" style="font-size:23px;">@Model.represent_sizes02</label>
 
-                        <button class="fw-bold btn btn-secondary" style="font-size:23px;">@Model.represent_sizes03</button>
+                        <label class="fw-bold btn btn-secondary" style="font-size:23px;">@Model.represent_sizes03</label>
 
                     </div>
 
                    
                 </div>
 
-                <!--Sub row 06 -->
+                <!--Sub row 06-->
+                <div class="row " style="padding-left:8%;padding-top:3%">
+
+                    <div class="col-12 col-md-12 col-sm-12 gap-5">
+                          <input type="text" style="width:50%" placeholder="Type the sizes you want(e.g. S M)" asp-for="tbxSizesUserWant" class="form-control"/>
+                          <span asp-validation-for="tbxSizesUserWant" class="text-danger text-start"></span>
+                    </div>
+
+
+                </div>
+
+                <!--Sub row 07-->
                 <div class="row" style="padding-right:74%;padding-top:5%">
                     <div class="col-12 col-md-12 col-sm-12">
                         <label class="fw-bold" style="font-size:23px">Color</label>
@@ -74,17 +90,18 @@
                     </div>
                 </div>
 
-                <!--Sub row 07 -->
+                <!--Sub row 08-->
                 <div class="row" style="padding-left:8%;padding-top:3%">
                     <div class="col-12 col-md-12 col-sm-12">
-                        <input type="text" class="form-control" style="color:gray;width:50%" asp-for="Tbl_ItemDetails.Color" placeholder="Color"/>
+                        <input type="text" class="form-control" style="color:gray;width:50%;" readonly asp-for="Tbl_ItemDetails.Color" placeholder="Color"/>
 
                     </div>
                 </div>
-
-                <!--Sub row 08 | button -->
+                <input type="hidden" asp-for="Tbl_ItemDetails.Id" />
+                <!--Sub row 09 | button -->
                 <div class="row" style="padding-left:7%;padding-top:6%">
                     <div class="col-12 col-md-12 col-sm-12">
+                       
                         <button type="submit"  style="width:90%;border-radius:25px" class="btn btn-primary">Buy Now</button>
 
                     </div>

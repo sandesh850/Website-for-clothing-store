@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
 using VelvetVeogue.Data;
 using VelvetVeogue.Models;
+using VelvetVeogue.PublicItems;
 
 namespace VelvetVeogue.Pages
 {
@@ -85,6 +87,36 @@ namespace VelvetVeogue.Pages
 
 
             return Page();
+        }
+
+        // sending data to public variables
+        [BindProperty,Required(ErrorMessage ="Please type the sizes you want")]
+        public string? tbxSizesUserWant {  get; set; }
+
+        public async Task<IActionResult> OnPost()
+        {
+
+            // Reload product from DB using Id
+            if (Tbl_ItemDetails != null)
+            {
+                Tbl_ItemDetails = await _appDb.Tbl_ItemDetails.FindAsync(Tbl_ItemDetails.Id);
+            }
+
+            // Save public variables
+            PublicVariables publicVariables = new PublicVariables
+            {
+                CategoryName = Tbl_ItemDetails.CategoryName,
+                price = Tbl_ItemDetails.Price,
+                sizes = tbxSizesUserWant,
+                color = Tbl_ItemDetails.Color,
+                Image = Tbl_ItemDetails.img
+            };
+
+            return RedirectToPage("PaymentAndOrderConfirmation");
+
+
+
+
         }
 
         //public void OnGet()

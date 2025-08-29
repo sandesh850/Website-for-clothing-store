@@ -94,13 +94,13 @@ namespace VelvetVeogue.Pages
         public string? tbxSizesUserWant {  get; set; }
 
         // On post
-        public async Task<IActionResult> OnPost()
+        public async Task<IActionResult> OnPost(int id)
         {
 
             // Reload product from DB using Id
             if (Tbl_ItemDetails != null)
             {
-                Tbl_ItemDetails = await _appDb.Tbl_ItemDetails.FindAsync(Tbl_ItemDetails.Id);
+                Tbl_ItemDetails = await _appDb.Tbl_ItemDetails.FindAsync(id);
 
                
             }
@@ -132,8 +132,13 @@ namespace VelvetVeogue.Pages
                 
             };
 
-            return RedirectToPage("PaymentAndOrderConfirmation");
+            if(publicVariables.CategoryName != string.Empty)
+            {
 
+                return RedirectToPage("PaymentAndOrderConfirmation");
+            }
+
+            return Page();
 
 
 

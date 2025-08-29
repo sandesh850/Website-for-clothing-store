@@ -71,8 +71,12 @@ namespace VelvetVeogue.Pages
             return RedirectToPage("index");
         }
 
-        //public void OnGet()
-        //{
-        //}
+        public async Task<IActionResult> OnGetAsync()
+        {
+            PublicVariables publicVariables = new PublicVariables();
+            tbxEmail = Convert.ToString( publicVariables.price);
+
+            return Page();
+        }
     }
 }

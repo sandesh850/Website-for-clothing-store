@@ -42,15 +42,15 @@ namespace VelvetVeogue.Pages
         {
             PublicVariables publicVariables = new PublicVariables();
 
-            if(!ModelState.IsValid)
-            {
-                return Page();
-            }
+            //if(!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
 
             var tblOrder_details = new Tbl_OrderDetails
             {
                 category = publicVariables.CategoryName,
-                ItemType = publicVariables.Public_variable_ItemType,
+                //ItemType = publicVariables.Public_variable_ItemType,
                 price = publicVariables.price,
                 color = publicVariables.color,
                 sizes = publicVariables.sizes,

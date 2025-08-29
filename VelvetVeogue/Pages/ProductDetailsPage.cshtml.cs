@@ -93,6 +93,7 @@ namespace VelvetVeogue.Pages
         [BindProperty,Required(ErrorMessage ="Please type the sizes you want")]
         public string? tbxSizesUserWant {  get; set; }
 
+        // On post
         public async Task<IActionResult> OnPost()
         {
 
@@ -100,7 +101,24 @@ namespace VelvetVeogue.Pages
             if (Tbl_ItemDetails != null)
             {
                 Tbl_ItemDetails = await _appDb.Tbl_ItemDetails.FindAsync(Tbl_ItemDetails.Id);
+
+               
             }
+
+            //// Item type checking
+            //if (Tbl_ItemDetails.ItemType == "G")
+            //{
+            //    ItemType = "Gent Item";
+
+            //}
+            //else if (Tbl_ItemDetails.ItemType == "L")
+            //{
+            //    ItemType = "Ladies Item";
+            //}
+            //else if (Tbl_ItemDetails.ItemType == "K")
+            //{
+            //    ItemType = "Kids Item";
+            //}
 
             // Save public variables
             PublicVariables publicVariables = new PublicVariables

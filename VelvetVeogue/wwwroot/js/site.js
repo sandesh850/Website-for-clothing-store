@@ -266,7 +266,8 @@ $("#SelectedPaymentMethod").on("change", function () {
                                +' <label>Card No</label>'
                             +'</div>'
                            +' <div class="col-9">'
-                               +' <input type="text" placeholder="Card No" class="form-control"/>'
+            + ' <input type="text" asp-for="tbxcardNo" placeholder="Card No" class="form-control"/>'
+           
                             +'</div>'
                         +'</div>'
 
@@ -277,7 +278,7 @@ $("#SelectedPaymentMethod").on("change", function () {
                                +' <label>Date</label>'
                             +'</div>'
                             +'<div class="col-3">'
-                                +'<input type="text" placeholder="MM/YY" class="form-control" />'
+            +'<input type="text" asp-for="tbxcardDate" placeholder="MM/YY" class="form-control" />'
                            +' </div>'
 
                             +'<!--CVC NO-->'
@@ -285,7 +286,7 @@ $("#SelectedPaymentMethod").on("change", function () {
                                 +'<label>CVC NO</label>'
                             +'</div>'
                            +' <div class="col-4">'
-                                +'<input type="text" style="width:40%" placeholder="000" class="form-control" />'
+            +'<input type="text" asp-for="tbxcvcNo" style="width:40%" placeholder="000" class="form-control" />'
                             +'</div>'
 
                         +'</div>'

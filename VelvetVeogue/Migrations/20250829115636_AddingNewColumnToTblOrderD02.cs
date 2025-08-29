@@ -5,15 +5,15 @@
 namespace VelvetVeogue.Migrations
 {
     /// <inheritdoc />
-    public partial class addingNewColumnForTblItemDetails_Table : Migration
+    public partial class AddingNewColumnToTblOrderD02 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
                 name: "ItemType",
-                table: "Tbl_ItemDetails",
-                type: "varchar(20)",
+                table: "Tbl_OrderDetails",
+                type: "varchar(50)",
                 nullable: false,
                 defaultValue: "");
         }
@@ -23,7 +23,7 @@ namespace VelvetVeogue.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "ItemType",
-                table: "Tbl_ItemDetails");
+                table: "Tbl_OrderDetails");
         }
     }
 }

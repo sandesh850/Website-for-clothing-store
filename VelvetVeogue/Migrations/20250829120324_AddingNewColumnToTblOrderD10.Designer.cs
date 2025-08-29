@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VelvetVeogue.Data;
 
@@ -10,9 +11,11 @@ using VelvetVeogue.Data;
 namespace VelvetVeogue.Migrations
 {
     [DbContext(typeof(AppDb))]
-    partial class AppDbModelSnapshot : ModelSnapshot
+    [Migration("20250829120324_AddingNewColumnToTblOrderD10")]
+    partial class AddingNewColumnToTblOrderD10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -141,9 +144,6 @@ namespace VelvetVeogue.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<string>("CVCNO")
-                        .HasColumnType("varchar(100)");
-
                     b.Property<string>("CardNo")
                         .HasColumnType("varchar(70)");
 
@@ -173,10 +173,6 @@ namespace VelvetVeogue.Migrations
                     b.Property<string>("email")
                         .IsRequired()
                         .HasColumnType("varchar(50)");
-
-                    b.Property<byte[]>("img")
-                        .IsRequired()
-                        .HasColumnType("varbinary");
 
                     b.Property<string>("paymentMethod")
                         .IsRequired()

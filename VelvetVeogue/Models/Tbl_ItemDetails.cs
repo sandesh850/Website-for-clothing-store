@@ -40,5 +40,7 @@ namespace VelvetVeogue.Models
         [Required,Column(TypeName ="varchar(20)")]
         public string? ItemType { get; set; }
 
+
+
     }
 }

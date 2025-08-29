@@ -11,8 +11,8 @@ using VelvetVeogue.Data;
 namespace VelvetVeogue.Migrations
 {
     [DbContext(typeof(AppDb))]
-    [Migration("20250825031045_addingNewColumnForTblItemDetails_Table")]
-    partial class addingNewColumnForTblItemDetails_Table
+    [Migration("20250829120211_AddingNewColumnToTblOrderD08")]
+    partial class AddingNewColumnToTblOrderD08
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -134,6 +134,57 @@ namespace VelvetVeogue.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tbl_ItemDetails");
+                });
+
+            modelBuilder.Entity("VelvetVeogue.Models.Tbl_OrderDetails", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("CardNo")
+                        .HasColumnType("varchar(70)");
+
+                    b.Property<string>("ItemType")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("address")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("category")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("color")
+                        .IsRequired()
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("contactNo")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("paymentMethod")
+                        .IsRequired()
+                        .HasColumnType("varchar(70)");
+
+                    b.Property<decimal>("price")
+                        .HasColumnType("money");
+
+                    b.Property<string>("sizes")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Tbl_OrderDetails");
                 });
 #pragma warning restore 612, 618
         }

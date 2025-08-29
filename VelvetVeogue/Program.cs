@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using VelvetVeogue.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -37,3 +37,4 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+

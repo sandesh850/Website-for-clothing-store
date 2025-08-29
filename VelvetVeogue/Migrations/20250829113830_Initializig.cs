@@ -5,7 +5,7 @@
 namespace VelvetVeogue.Migrations
 {
     /// <inheritdoc />
-    public partial class initializing : Migration
+    public partial class Initializig : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -52,11 +52,24 @@ namespace VelvetVeogue.Migrations
                     size = table.Column<string>(type: "varchar(10)", nullable: false),
                     AvailableQty = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "money", nullable: false),
-                    img = table.Column<byte[]>(type: "varbinary(max)", nullable: false)
+                    img = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
+                    ItemType = table.Column<string>(type: "varchar(20)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tbl_ItemDetails", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Tbl_OrderDetails",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tbl_OrderDetails", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -85,6 +98,9 @@ namespace VelvetVeogue.Migrations
 
             migrationBuilder.DropTable(
                 name: "Tbl_ItemDetails");
+
+            migrationBuilder.DropTable(
+                name: "Tbl_OrderDetails");
 
             migrationBuilder.DropTable(
                 name: "TblLogins");

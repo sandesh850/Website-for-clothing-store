@@ -11,8 +11,8 @@ using VelvetVeogue.Data;
 namespace VelvetVeogue.Migrations
 {
     [DbContext(typeof(AppDb))]
-    [Migration("20250822050251_initializing")]
-    partial class initializing
+    [Migration("20250829115737_AddingNewColumnToTblOrderD03")]
+    partial class AddingNewColumnToTblOrderD03
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -112,6 +112,10 @@ namespace VelvetVeogue.Migrations
                     b.Property<int>("ItemCode")
                         .HasColumnType("int");
 
+                    b.Property<string>("ItemType")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("varchar(30)");
@@ -130,6 +134,30 @@ namespace VelvetVeogue.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tbl_ItemDetails");
+                });
+
+            modelBuilder.Entity("VelvetVeogue.Models.Tbl_OrderDetails", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("ItemType")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("category")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<decimal>("price")
+                        .HasColumnType("money");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Tbl_OrderDetails");
                 });
 #pragma warning restore 612, 618
         }

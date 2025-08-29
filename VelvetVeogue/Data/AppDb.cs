@@ -5,7 +5,7 @@ namespace VelvetVeogue.Data
 {
     public class AppDb: DbContext
     {
-
+        
         public AppDb(DbContextOptions<AppDb> options ) : base (options)
         {
 
@@ -19,7 +19,7 @@ namespace VelvetVeogue.Data
 
         public DbSet<Tbl_Inquiries> Tbl_Inquiries { get; set; }
 
-        public DbSet<Tbl_OrderDetails> Tbl_OrderDetails { get;set; }
+        public DbSet<Tbl_OrderDetails> Tbl_OrderDetails { get; set; }
 
     }
 }

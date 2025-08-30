@@ -34,8 +34,33 @@ namespace VelvetVeogue.Pages
         public string represent_sizes03 { get; set; }
 
 
+
+
         [BindProperty]
         public string ItemType { get; set; }
+
+      
+
+        [BindProperty]
+        public int ID { get; set; }
+
+        // sending data to payment page
+        [BindProperty, Required(ErrorMessage = "Please type the sizes you want")]
+        public string? tbxSizesUserWant { get; set; }
+
+
+        [BindProperty]
+        public string? ItemTypePost { get; set; }
+
+        [BindProperty]
+        public string? CategoryNamePost { get; set; }
+
+
+        [BindProperty]
+        public double? Price { get; set; }
+
+        [BindProperty]
+        public string? color02 { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
@@ -79,70 +104,52 @@ namespace VelvetVeogue.Pages
                         represent_sizes03 = "L";
                     }
                 }
+
+               ItemTypePost = Tbl_ItemDetails.ItemType;
+               CategoryNamePost = Tbl_ItemDetails.CategoryName;
+               Price = Tbl_ItemDetails.Price;
+               color02 = Tbl_ItemDetails.Color;
+               ID = Tbl_ItemDetails.Id;
             }
            
-
-           
-
-
 
             return Page();
         }
 
-        // sending data to public variables
-        [BindProperty,Required(ErrorMessage ="Please type the sizes you want")]
-        public string? tbxSizesUserWant {  get; set; }
 
-        // On post
-       //public async Task<IActionResult> OnPost()
-       //{
+      
 
-       //     /* // Reload product from DB using Id
-       //     if (Tbl_ItemDetails != null)
-       //     {
-       //         Tbl_ItemDetails = await _appDb.Tbl_ItemDetails.FindAsync(id);
+        public IActionResult OnPost()
+        {
 
-               
-       //     }
+            if(Tbl_ItemDetails != null)
+            {
+                HttpContext.Session.SetString("ItemType", ItemTypePost ?? "");
+                HttpContext.Session.SetString("CategoryName", CategoryNamePost ?? "");
+                HttpContext.Session.SetString("Price", Price.ToString() ?? "0");
+                HttpContext.Session.SetString("UserSize", tbxSizesUserWant ?? "");
+                HttpContext.Session.SetString("color",color02 ?? "");
+                HttpContext.Session.SetInt32("id", ID);
 
-       //     //// Item type checking
-       //     //if (Tbl_ItemDetails.ItemType == "G")
-       //     //{
-       //     //    ItemType = "Gent Item";
+                //HttpContext.Session.SetString("ItemType",Tbl_ItemDetails.ItemType);
+                //HttpContext.Session.SetString("CategoryName", Tbl_ItemDetails.CategoryName);
+                ////HttpContext.Session.SetString("ItemType", Tbl_ItemDetails.ItemType);
+                //HttpContext.Session.SetString("Price", Tbl_ItemDetails.Price.ToString());
+                ////HttpContext.Session.SetString("ItemType", Tbl_ItemDetails.ItemType);
+                //HttpContext.Session.SetString("UserSize", tbxSizesUserWant);
+                ////HttpContext.Session.SetString("ItemType", Tbl_ItemDetails.ItemType);
+                //HttpContext.Session.SetString("color", Tbl_ItemDetails.Color);
 
-       //     //}
-       //     //else if (Tbl_ItemDetails.ItemType == "L")
-       //     //{
-       //     //    ItemType = "Ladies Item";
-       //     //}
-       //     //else if (Tbl_ItemDetails.ItemType == "K")
-       //     //{
-       //     //    ItemType = "Kids Item";
-       //     //}
+                return RedirectToPage ("PaymentAndOrderConfirmation");
 
-       //     // Save public variables
-       //     PublicVariables publicVariables = new PublicVariables
-       //     {
-       //         CategoryName = Tbl_ItemDetails.CategoryName,
-       //         price = Tbl_ItemDetails.Price,
-       //         sizes = tbxSizesUserWant,
-       //         color = Tbl_ItemDetails.Color,
-       //         Image = Tbl_ItemDetails.img,
-       //         Public_variable_ItemType = ItemType 
-                
-       //     };
+            }
 
-       //     if(publicVariables.CategoryName != string.Empty)
-       //     {
+            return Page();  
 
-       //         return RedirectToPage("PaymentAndOrderConfirmation");
-       //     }*/
+           
+            
 
-       //     return RedirectToPage("PaymentAndOrderConfirmation");
-
-
-
-       //}
+        }
 
         //public void OnGet()
         //{

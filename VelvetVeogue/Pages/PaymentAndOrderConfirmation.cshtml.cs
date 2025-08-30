@@ -41,11 +41,21 @@ namespace VelvetVeogue.Pages
         [BindProperty]
         public Tbl_ItemDetails? TblItemDetails { get; set; }
 
-        public async Task<IActionResult> OnPostAsync(int id)
-        {
-            PublicVariables publicVariables = new PublicVariables();
+        //[BindProperty]
+        //public int? ID { get; set; }
 
-            
+        [BindProperty]
+        public string? userWantSizeL { get; set; }
+
+        public void OnGet()
+        {
+            userWantSizeL = HttpContext.Session.GetString("id");
+        }
+       
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            var id = HttpContext.Session.GetInt32("id");
 
             TblItemDetails = await _appDb.Tbl_ItemDetails.FindAsync(id);
 
@@ -54,13 +64,15 @@ namespace VelvetVeogue.Pages
             //    return Page();
             //}
 
+
+
             var tblOrder_details = new Tbl_OrderDetails
             {
-                category =TblItemDetails.CategoryName,
-                ItemType = TblItemDetails.ItemType,
+                ItemType =HttpContext.Session.GetString("ItemType"),
+                category = HttpContext.Session.GetString("CategoryName"),
                 price = TblItemDetails.Price,
-                color = TblItemDetails.Color,
-                sizes = TblItemDetails.size,
+                color = HttpContext.Session.GetString("color"),
+                sizes = HttpContext.Session.GetString("UserSize"),
                 address = tbxaddress,
                 contactNo = tbxContactNo,
                 email = tbxEmail,
@@ -68,22 +80,16 @@ namespace VelvetVeogue.Pages
                 CardNo = tbxcardNo,
                 cardDate = tbxcardDate,
                 CVCNO = tbxcvcNo,
-                img = publicVariables.Image,
+                //img = publicVariables.Image,
             };
 
 
             _appDb.Tbl_OrderDetails.Add(tblOrder_details);
             await _appDb.SaveChangesAsync();
 
-            return RedirectToPage("index");
+            return RedirectToPage("Index");
         }
 
-        public async Task<IActionResult> OnGetAsync()
-        {
-            PublicVariables publicVariables = new PublicVariables();
-            tbxEmail = Convert.ToString( publicVariables.price);
-
-            return Page();
-        }
+       
     }
 }

@@ -97,12 +97,12 @@
 
                     </div>
                 </div>
-                <input type="hidden" asp-for="Tbl_ItemDetails.Id" />
+             @*    <input type="hidden"  /> *@
                 <!--Sub row 09 | button -->
                 <div class="row" style="padding-left:7%;padding-top:6%">
                     <div class="col-12 col-md-12 col-sm-12">
                        
-                        <button type="submit"  style="width:90%;border-radius:25px" class="btn btn-primary">Buy Now</button>
+                        <a type="button" asp-route-id="@Model.Tbl_ItemDetails.Id" asp-page="PaymentAndOrderConfirmation" style="width:90%;border-radius:25px" class="btn btn-primary">Buy Now</a>
 
                     </div>
                 </div>

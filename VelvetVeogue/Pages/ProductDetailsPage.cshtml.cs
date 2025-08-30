@@ -94,55 +94,55 @@ namespace VelvetVeogue.Pages
         public string? tbxSizesUserWant {  get; set; }
 
         // On post
-        public async Task<IActionResult> OnPost(int id)
-        {
+       //public async Task<IActionResult> OnPost()
+       //{
 
-            // Reload product from DB using Id
-            if (Tbl_ItemDetails != null)
-            {
-                Tbl_ItemDetails = await _appDb.Tbl_ItemDetails.FindAsync(id);
+       //     /* // Reload product from DB using Id
+       //     if (Tbl_ItemDetails != null)
+       //     {
+       //         Tbl_ItemDetails = await _appDb.Tbl_ItemDetails.FindAsync(id);
 
                
-            }
+       //     }
 
-            //// Item type checking
-            //if (Tbl_ItemDetails.ItemType == "G")
-            //{
-            //    ItemType = "Gent Item";
+       //     //// Item type checking
+       //     //if (Tbl_ItemDetails.ItemType == "G")
+       //     //{
+       //     //    ItemType = "Gent Item";
 
-            //}
-            //else if (Tbl_ItemDetails.ItemType == "L")
-            //{
-            //    ItemType = "Ladies Item";
-            //}
-            //else if (Tbl_ItemDetails.ItemType == "K")
-            //{
-            //    ItemType = "Kids Item";
-            //}
+       //     //}
+       //     //else if (Tbl_ItemDetails.ItemType == "L")
+       //     //{
+       //     //    ItemType = "Ladies Item";
+       //     //}
+       //     //else if (Tbl_ItemDetails.ItemType == "K")
+       //     //{
+       //     //    ItemType = "Kids Item";
+       //     //}
 
-            // Save public variables
-            PublicVariables publicVariables = new PublicVariables
-            {
-                CategoryName = Tbl_ItemDetails.CategoryName,
-                price = Tbl_ItemDetails.Price,
-                sizes = tbxSizesUserWant,
-                color = Tbl_ItemDetails.Color,
-                Image = Tbl_ItemDetails.img,
-                Public_variable_ItemType = ItemType 
+       //     // Save public variables
+       //     PublicVariables publicVariables = new PublicVariables
+       //     {
+       //         CategoryName = Tbl_ItemDetails.CategoryName,
+       //         price = Tbl_ItemDetails.Price,
+       //         sizes = tbxSizesUserWant,
+       //         color = Tbl_ItemDetails.Color,
+       //         Image = Tbl_ItemDetails.img,
+       //         Public_variable_ItemType = ItemType 
                 
-            };
+       //     };
 
-            if(publicVariables.CategoryName != string.Empty)
-            {
+       //     if(publicVariables.CategoryName != string.Empty)
+       //     {
 
-                return RedirectToPage("PaymentAndOrderConfirmation");
-            }
+       //         return RedirectToPage("PaymentAndOrderConfirmation");
+       //     }*/
 
-            return Page();
+       //     return RedirectToPage("PaymentAndOrderConfirmation");
 
 
 
-        }
+       //}
 
         //public void OnGet()
         //{

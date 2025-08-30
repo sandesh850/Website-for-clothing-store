@@ -38,9 +38,16 @@ namespace VelvetVeogue.Pages
             _appDb = appDb;
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        [BindProperty]
+        public Tbl_ItemDetails? TblItemDetails { get; set; }
+
+        public async Task<IActionResult> OnPostAsync(int id)
         {
             PublicVariables publicVariables = new PublicVariables();
+
+            
+
+            TblItemDetails = await _appDb.Tbl_ItemDetails.FindAsync(id);
 
             //if(!ModelState.IsValid)
             //{
@@ -49,11 +56,11 @@ namespace VelvetVeogue.Pages
 
             var tblOrder_details = new Tbl_OrderDetails
             {
-                category = publicVariables.CategoryName,
-                //ItemType = publicVariables.Public_variable_ItemType,
-                price = publicVariables.price,
-                color = publicVariables.color,
-                sizes = publicVariables.sizes,
+                category =TblItemDetails.CategoryName,
+                ItemType = TblItemDetails.ItemType,
+                price = TblItemDetails.Price,
+                color = TblItemDetails.Color,
+                sizes = TblItemDetails.size,
                 address = tbxaddress,
                 contactNo = tbxContactNo,
                 email = tbxEmail,
@@ -63,7 +70,7 @@ namespace VelvetVeogue.Pages
                 CVCNO = tbxcvcNo,
                 img = publicVariables.Image,
             };
-           
+
 
             _appDb.Tbl_OrderDetails.Add(tblOrder_details);
             await _appDb.SaveChangesAsync();

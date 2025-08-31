@@ -14,6 +14,7 @@
                 @if(Model.Tbl_ItemDetails.img != null)
                 {
                     <img src="data:image/png;base64,@Convert.ToBase64String(Model.Tbl_ItemDetails.img)" style="width:450px; height:550px;" />
+                   @*  <input type="text" hidden asp-for="SelectImg" /> *@
                 }
                 
                 

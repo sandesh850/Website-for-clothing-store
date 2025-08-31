@@ -39,7 +39,7 @@ namespace VelvetVeogue.Pages
         [BindProperty]
         public string ItemType { get; set; }
 
-      
+
 
         [BindProperty]
         public int ID { get; set; }
@@ -61,6 +61,9 @@ namespace VelvetVeogue.Pages
 
         [BindProperty]
         public string? color02 { get; set; }
+
+        [BindProperty]
+        public byte[]? SelectImg { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
@@ -105,11 +108,12 @@ namespace VelvetVeogue.Pages
                     }
                 }
 
-               ItemTypePost = Tbl_ItemDetails.ItemType;
-               CategoryNamePost = Tbl_ItemDetails.CategoryName;
-               Price = Tbl_ItemDetails.Price;
-               color02 = Tbl_ItemDetails.Color;
-               ID = Tbl_ItemDetails.Id;
+                ItemTypePost = Tbl_ItemDetails.ItemType;
+                CategoryNamePost = Tbl_ItemDetails.CategoryName;
+                Price = Tbl_ItemDetails.Price;
+                color02 = Tbl_ItemDetails.Color;
+                ID = Tbl_ItemDetails.Id;
+                //SelectImg = Tbl_ItemDetails.img; 
             }
            
 
@@ -130,6 +134,7 @@ namespace VelvetVeogue.Pages
                 HttpContext.Session.SetString("UserSize", tbxSizesUserWant ?? "");
                 HttpContext.Session.SetString("color",color02 ?? "");
                 HttpContext.Session.SetInt32("id", ID);
+                //HttpContext.Session.SetString("img",SelectImg.ToString());
 
                 //HttpContext.Session.SetString("ItemType",Tbl_ItemDetails.ItemType);
                 //HttpContext.Session.SetString("CategoryName", Tbl_ItemDetails.CategoryName);

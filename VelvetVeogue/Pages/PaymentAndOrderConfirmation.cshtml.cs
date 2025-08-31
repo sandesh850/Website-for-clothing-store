@@ -64,6 +64,13 @@ namespace VelvetVeogue.Pages
             //    return Page();
             //}
 
+            byte[]? img = null;
+            
+            if(TblItemDetails != null)
+            {
+                img = TblItemDetails.img;
+
+            }
 
 
             var tblOrder_details = new Tbl_OrderDetails
@@ -80,7 +87,7 @@ namespace VelvetVeogue.Pages
                 CardNo = tbxcardNo,
                 cardDate = tbxcardDate,
                 CVCNO = tbxcvcNo,
-                //img = publicVariables.Image,
+                img =img,
             };
 
 

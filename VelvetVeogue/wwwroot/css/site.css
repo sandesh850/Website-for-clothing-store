@@ -42,23 +42,108 @@ body {
     font-weight:bold;
 }
 
+/*Index page category cards 325px*/
+@media (max-width:325px) {
+
+    .categoryLabel {
+        transform: translateY(8%);
+    }
+
+    .MyPositioningTopLadies {
+        transform: translateY(10%);
+    }
+
+    .MyPositioningTopKids {
+        transform: translateY(15%);
+    }
+}
+
+/*Index page category cards 376*/
+@media (max-width:376px) {
+
+    .categoryLabel {
+        transform: translateY(8%);
+    }
+
+    .MyPositioningTopLadies {
+        transform: translateY(10%);
+    }
+
+    .MyPositioningTopKids {
+        transform: translateY(15%);
+    }
+}
+
+
+/*Index page category cards 426*/
+@media (max-width:426px) {
+
+    .categoryLabel {
+        transform: translateY(8%);
+    }
+
+    .MyPositioningTopLadies {
+        transform: translateY(10%);
+    }
+
+    .MyPositioningTopKids {
+        transform: translateY(15%);
+    }
+}
+
 /*index page promotion card (left side)*/
 @media (max-width:430px) {
 
-    .Position_Promotion_Vard {
-        transform:translateY(150%);
+    .LeftPosition_Promotion_Vard {
+         transform:translateY(180%);
+     
+    }
+}
+
+@media (max-width:325px) {
+
+    .LeftPosition_Promotion_Vard {
+        transform: translateY(199%);
+    }
+}
+
+@media (max-width:376px) {
+
+    .LeftPosition_Promotion_Vard {
+        transform: translateY(199%);
     }
 }
 
 /*index page center card (welcome note)*/
+.WelcomeNoteHeight {
+    height: 45vh;
+}
 @media (max-width:430px){
 
     .Position{
-        transform:translateY(-400px);
-        text-align:center;
+        transform:translateY(-50vh);
+       
+       /* text-align:center;*/
 
     }
+
+    .WelcomeNoteImg{
+        text-align:center;
+    }
+
+    .MyCardHeight {
+        height: 85vh;
+    }
 }
+
+
+@media (max-width:325px) {
+
+    .WelcomeNoteImg {
+        text-align: center;
+    }
+}
+
 
 
 /*index page category item postion chanching (gents item)*/

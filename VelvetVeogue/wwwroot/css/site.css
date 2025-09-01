@@ -256,8 +256,32 @@ body {
     font-size: 55px;
 }
 
+.MclsContactUSRow02{
 
-@media (max-width:426px) {
+    padding-top:5%;
+    margin-bottom:5%;
+}
+
+.MyclsFontSizeOfSM{
+    font-size:200%;
+}
+
+.MyclsLeftSideHeadeFonts{
+
+    font-size:190%;
+}
+
+.MyclsComonFontsSizes{
+    font-size:150%;
+}
+
+/*@media (max-width:325px){
+    .MyclsMediaQuery{
+        margin-top:5%;
+    }
+}*/
+
+/*@media (max-width:426px) {
     .ContactUS {
         font-size: 40px;
     }
@@ -273,5 +297,5 @@ body {
        
 
     }
-}
+}*/
 

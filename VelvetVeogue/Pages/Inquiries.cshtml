@@ -11,24 +11,25 @@
         <!--Main row-->
         <div class="row justify-content-center">
 
-            <div class="col-12 col-md-12 col-sm-12" style="border-style:solid;border-color:black;border-radius:25px;width:50%;margin-top:5%;margin-bottom:5%">
+            <!--main border-->
+            <div class="col-12 col-md-12" style="border-style:solid;border-color:black;border-radius:25px;width:50%;margin-top:5%;margin-bottom:5%">
 
                 <!--Row 01-->
-                <div class="row text-center" style="padding-top:3%">
-                    <h2 class="fw-bold col-12 col-md-12 col-sm-12">Inquiries</h2>
+                <div class="row text-center col-12 col-md-12" style="padding-top:3%">
+                    <label class="fw-bold " style="font-size:190%">INQUIRIES</label>
                 </div>
 
                 <!--Row 02-->
-                <div class="row justify-content-center" style="padding-top:3%">
-                    <div class="col-12 col-md-12 col-sm-12" style="border-style:solid;border-color:black;width:95%;height:2%"></div>
+                <div class="row justify-content-center " style="padding-top:3%">
+                    <div class="col-12 col-md-12" style="border-style:solid;border-color:black;width:99%;height:2%"></div>
                 </div>
 
                 <!--Row 03-->
                 <div class="row" style="padding-top:3%">
 
-                    <div class="col-12 col-md-12 col-sm-12">
+                    <div class="col-12 col-md-12">
 
-                        <label style="font-size:19px;">Subject</label>
+                        <label style="font-size:100%;">Subject</label>
                         <input type="text" style="color:grey" asp-for="tbxSubject" class="form-control" placeholder="subject" />
                         <span asp-validation-for="tbxSubject" class="text-danger"></span>
 
@@ -39,9 +40,9 @@
                 <!--Row 04-->
                 <div class="row" style="padding-top:3%;padding-top:3%">
 
-                    <div class="col-12 col-md-12 col-sm-12">
+                    <div class="col-12 col-md-12">
 
-                        <label style="font-size:19px;">Message (Issue)</label>
+                        <label style="font-size:100%;">Message (Issue)</label>
                         <textarea style="color:grey;resize:none" rows="3" asp-for="tbxMessage" class="form-control" placeholder="Message"></textarea>
                         <span asp-validation-for="tbxMessage" class="text-danger"></span>
 
@@ -53,7 +54,7 @@
                 <!--Row 05-->
                 <div class="row" style="padding-top:3%;padding-top:3%">
 
-                    <div class="col-12 col-md-12 col-sm-12">
+                    <div class="col-12 col-md-12">
 
                         <button type="submit" class="btn btn-primary" style="background-color:black;border-color:black;color:white;
                             width:100%;margin-bottom:4%">

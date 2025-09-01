@@ -207,6 +207,81 @@ body {
     }
 }
 
+/*Login Config page*/
+.LoginConfig {
+    font-size: 200%
+}
+
+@media(max-width:376px) {
+    .LoginConfig {
+        font-size: 100%;
+       
+    }
+}
+
+@media(max-width:426px) {
+    .LoginConfig {
+        font-size: 100%;
+    }
+}
+
+.Fonts{
+
+    font-size:100%;
+}
+
+.MyclsBorder {
+
+    border-style: solid;
+    border-color: black;
+    border-radius: 25px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width:50%;
+}
+
+@media(max-width:325px){
+
+    .MyclsBorder{
+        width:100%;
+    }
+
+}
+
+@media(max-width:376px) {
+
+    .MyclsBorder {
+        width: 100%;
+    }
+}
+
+@media(max-width:426px) {
+
+    .MyclsBorder {
+        width: 100%;
+    }
+}
+
+.BorderAlifnment{
+    justify-items:center;
+}
+
+.CardItemMoving
+{
+
+    padding-left:3%;
+    padding-right:3%;
+}
+
+
+@media(max-width:326px) 
+{
+    .LoginConfig{
+        font-size:100%;
+        
+    }
+}
+
 /*About us page*/
 .clsAboutUs {
     font-size: 200%;

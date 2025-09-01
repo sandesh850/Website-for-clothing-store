@@ -211,46 +211,43 @@ body {
 
 /*About us page*/
 .clsAboutUs {
-    font-size: 50px;
+    font-size: 200%;
     color: black;
-}
-
-@media (max-width:426px){
-
-    .clsAboutUs{
-
-        transform:translate(100px,310px);
-    }
-
+    margin-top: 15%;
 }
 
 .paragraph {
-    font-size: 24px;
+    font-size: 120%;
     color: black;
     margin-top:5%;
-}
-
-@media (max-width:426px) {
-    .paragraph {
-        font-size: 14px;
-        transform: translateY(320px);
-        width: 350px;
-    }
     
 }
 
 .img {
-    width: 500px;
-    height: 500px;
+    width: 90%;
+    height: 50vh;
+    margin-bottom: 10%;
+    margin-top: 20%;
+}
+
+@media (max-width:324px){
+
+    .img {
+        width: 200%;
+    }
+}
+
+@media (max-width:376px) {
+
+    .img {
+        width: 200%;
+    }
 }
 
 @media (max-width:426px) {
+
     .img {
-        /*visibility:hidden;*/
-        width:400px;
-        height:400px;
-        transform:translate(-210px,-100px);
-       
+        width: 200%;
     }
 }
 

@@ -164,7 +164,7 @@ body {
     }
 }
 
-/*index page category item postion chanching (kids item)*/
+/*index page category item position chanching (kids item)*/
 @media(max-width:330px) {
     .KidsCardPositionChanging02 {
         transform: translateX(-10px);
@@ -182,32 +182,30 @@ body {
 }
 
 /*Login page media queries*/
-@media(max-width:426px) /*Configuring Mobile L 425px */
-{
-    .LoginDiv {
-      transform:translateY(25px);
-     /* width:100%;*/
+.AlignmentOfCard {
+    padding-top: 5%;
+    margin-bottom: 5%;
+}
+
+@media (max-width:325px) {
+    .AlignmentOfCard{
+        padding-top:10%;
+    }
+    
+
+}
+
+@media (max-width:376px) {
+    .AlignmentOfCard {
+        padding-top: 10%;
     }
 }
 
-@media(max-width:376px)/* Configuring Mobile M 375px */
-{
-    .LoginDiv {
-        /*width: 170%;
-       
-        transform: translate(-30px, 30px);*//* X , Y*/
-        width:100%;
+@media (max-width:426px) {
+    .AlignmentOfCard {
+        padding-top: 10%;
     }
 }
-
-
-/*@media(min-width:425px)*/ /*Configuring Lap top view | 425px */
-/*{
-    .LoginDiv {
-       
-        justify-content:center;
-    }
-}*/
 
 /*About us page*/
 .clsAboutUs {

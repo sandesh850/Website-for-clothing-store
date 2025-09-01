@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXr4+G+... (shortened)" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
+
     <!--Nav bar-->
     <header>
         <nav class="navbar navbar-expand-md navbar-toggleable-sm border-bottom box-shadow mb-3 NavBarBgColor ">
@@ -35,7 +36,8 @@
                     <!--Left side links-->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                        <li class="nav-item dropdown"> <!--My modification-->
+                        <li class="nav-item dropdown">
+                            <!--My modification-->
                             @if (HttpContextAccessor.HttpContext?.Session?.GetString("Login") == "true")
                             {
                                 <a class=" nav-link  dropdown-toggle " role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white">ITEMS</a>
@@ -52,22 +54,22 @@
                                 </ul>
                             }
 
-                           
-                          
+
+
 
                         </li>
 
-                         @if (HttpContextAccessor.HttpContext?.Session?.GetString("Login") == "true")
+                        @if (HttpContextAccessor.HttpContext?.Session?.GetString("Login") == "true")
                         {
                             <li class="nav-item">
                                 <a class="nav-link " style="color:white;" asp-area="" asp-page="/AdminDashboard">Admin Dashboard</a>
                             </li>
-                        
+
                         }
-                     
+
                     </ul>
 
-                   
+
                     <!--Right side links-->
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
 
@@ -114,8 +116,8 @@
 
                 </div>
 
-               
-              
+
+
 
             </div>
 
@@ -124,15 +126,15 @@
     </header>
 
     <div class="container-fluid ">
-        <main role="main" class="pb-3">
+        <main role="main" class="flex-fill">
             @RenderBody()
         </main>
     </div>
 
   <!--Footer area-->
-  <footer style="background-color:black;height:30vh" class="mt-5">
+    <footer class="bg-black text-white mt-auto py-4">
 
-        <div class="container" style="">
+        <div class="container">
 
             <!--Row 01-->
             <div class="row text-center justify-content-center " style="padding-top:3%">

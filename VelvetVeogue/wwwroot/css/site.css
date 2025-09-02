@@ -181,7 +181,8 @@ body {
     }
 }
 
-/*Login page(sign in page)*/
+
+/*Login page | this also used in sign up page(sign in page)*/
 .MyclzBorder {
     border-style: solid;
     border-color: black;
@@ -254,6 +255,7 @@ body {
     }
 }
 
+/*This also used in sign up page*/
 .Fonts{
 
     font-size:100%;
@@ -291,12 +293,12 @@ body {
     }
 }
 
-/*This also used in Login page (sign in page)*/
+/*This also used in Login and sign up pages (sign in page)*/
 .BorderAlifnment{
     justify-items:center;
 }
 
-/*This also used in Login page (sign in page)*/
+/*This also used in Login and sign up pages (sign in page)*/
 .CardItemMoving
 {
 

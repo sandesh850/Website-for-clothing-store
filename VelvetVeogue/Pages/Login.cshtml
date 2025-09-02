@@ -8,33 +8,39 @@
     <div class="container">
 
         <!--Main row-->
-        <div class="row justify-content-center AlignmentOfCard" style="">
+        <div class="row AlignmentOfCard" style="">
 
-            <div class="col-12 col-md-12 " style="border-style:solid;border-color:black;width:50%;border-radius:25px;background-color:white;">
+            <div class="col-12 col-md-12 BorderAlifnment">
 
-                <div class="text-center " style="padding-top:5%;">
-                    <h2 class="fw-bold">Sign in</h2>
+                <div class="MyclzBorder CardItemMoving">
+
+                    <div class="text-center " style="padding-top:5%;">
+                        <h2 class="fw-bold">Sign in</h2>
+                    </div>
+
+                    <div style="margin-bottom:5%;margin-top:4%;">
+                        <label>Username</label>
+                        <input type="text" class="form-control" asp-for="tbxusername" placeholder="Username" />
+                        <span asp-validation-for="tbxusername" class="text-danger"></span>
+
+                    </div>
+
+                    <div style="margin-bottom:7%">
+                        <label>Password</label>
+                        <input type="password" placeholder="Password" asp-for="tbxpassword" class="form-control" />
+                        <span asp-validation-for="tbxpassword" class="text-danger"></span>
+
+                    </div>
+
+                    <div style="margin-bottom:10%;" class="justify-content-center">
+
+                        <button type="submit" class="btn btn-primary fw-bold" style="background-color:black;color:white;width:100%;border-color:black;">Sign in</button>
+
+                    </div>
+
                 </div>
 
-                <div style="margin-bottom:5%;margin-top:4%;">
-                    <label>Username</label>
-                    <input type="text" class="form-control" asp-for="tbxusername" placeholder="Username" />
-                    <span asp-validation-for="tbxusername" class="text-danger"></span>
-
-                </div>
-
-                <div style="margin-bottom:7%">
-                    <label>Password</label>
-                    <input type="password" placeholder="Password" asp-for="tbxpassword" class="form-control" />
-                    <span asp-validation-for="tbxpassword" class="text-danger"></span>
-
-                </div>
-
-                <div style="margin-bottom:10%;" class="justify-content-center">
-
-                    <button type="submit" class="btn btn-primary fw-bold" style="background-color:black;color:white;width:100%;border-color:black;">Sign in</button>
-
-                </div>
+               
             </div>
 
         </div>

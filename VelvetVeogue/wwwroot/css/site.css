@@ -181,7 +181,36 @@ body {
     }
 }
 
-/*Login page media queries*/
+/*Login page(sign in page)*/
+.MyclzBorder {
+    border-style: solid;
+    border-color: black;
+    width: 50%;
+    border-radius: 25px;
+    background-color: white;
+}
+
+@media(max-width:325px) {
+
+    .MyclzBorder {
+        width: 100%;
+    }
+}
+
+@media(max-width:376px) {
+
+    .MyclzBorder {
+        width: 100%;
+    }
+}
+
+@media(max-width:426px) {
+
+    .MyclzBorder {
+        width: 100%;
+    }
+}
+
 .AlignmentOfCard {
     padding-top: 5%;
     margin-bottom: 5%;
@@ -262,10 +291,12 @@ body {
     }
 }
 
+/*This also used in Login page (sign in page)*/
 .BorderAlifnment{
     justify-items:center;
 }
 
+/*This also used in Login page (sign in page)*/
 .CardItemMoving
 {
 

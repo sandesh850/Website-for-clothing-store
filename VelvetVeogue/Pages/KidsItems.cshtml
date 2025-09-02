@@ -6,11 +6,11 @@
 
 <div class="container">
 
-    <div class="row">
+    <div class="row" style="margin-bottom:5%">
 
         @foreach(var data in Model.Tbl_ItemDetails)
         {
-            <div class="col-3 col-md-3" style="margin-top:3%">
+            <div class="col-12 col-md-3" style="margin-top:3%;display:flex;justify-content:center;">
 
                 <!--Card-->
                 <div class="card" style="width: 18rem;">
@@ -40,12 +40,12 @@
                     <div class="row" style="padding-left:5%">
 
                         <div class="col-6 col-md-6">
-                            <labe style="font-size:19px">Colors</labe>
+                            <label class="Fonts">Colors</label>
 
                         </div>
 
                         <div class="col-6 col-md-6">
-                            <labe>@data.Color</labe>
+                            <label class="Fonts">@data.Color</label>
 
                         </div>
 
@@ -56,12 +56,12 @@
                     <div class="row" style="padding-left:5%">
 
                         <div class="col-6 col-md-6">
-                            <labe style="font-size:19px">Available Sizes</labe>
+                            <label class="Fonts">Available Sizes</label>
 
                         </div>
 
                         <div class="col-6 col-md-6">
-                            <labe>@data.size</labe>
+                            <label class="Fonts">@data.size</label>
 
                         </div>
 
@@ -72,12 +72,12 @@
                     <div class="row" style="padding-left:5%;">
 
                         <div class="col-6 col-md-6">
-                            <labe style="font-size:19px">Price</labe>
+                            <label class="Fonts">Price</label>
 
                         </div>
 
                         <div class="col-6 col-md-6">
-                            <labe>@data.Price</labe>
+                            <label class="Fonts">@data.Price</label>
 
                         </div>
 

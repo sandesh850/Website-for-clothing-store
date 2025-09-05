@@ -28,7 +28,8 @@
                     <div class="col-12 col-md-12">
 
                         <label class="Fonts">Current username</label>
-                        <input type="text" style="color:grey" class="form-control" placeholder="Current username" />
+                        <input type="text" style="color:grey" class="form-control" asp-for="tbxCurrent_username" placeholder="Current username" />
+                        <span asp-validation-for="tbxCurrent_username" class="text-danger"></span>
 
                     </div>
 
@@ -40,7 +41,8 @@
                     <div class="col-12 col-md-12">
 
                         <label class="Fonts">Current password</label>
-                        <input type="password" style="color:grey" class="form-control" placeholder="Current password" />
+                        <input type="password" style="color:grey" class="form-control" asp-for="tbxCurrent_username" placeholder="Current password" />
+                        <span asp-validation-for="tbxCurrent_username" class="text-danger"></span>
 
                     </div>
 
@@ -68,7 +70,8 @@
                     <div class="col-12 col-md-12">
 
                         <label class="Fonts">New username</label>
-                        <input type="text" style="color:grey" class="form-control" placeholder="New username" />
+                        <input type="text" style="color:grey" class="form-control" asp-for="tbxNew_username" placeholder="New username" />
+                        <span asp-validation-for="tbxNew_username" class="text-danger"></span>
 
                     </div>
 
@@ -80,7 +83,8 @@
                     <div class="col-12 col-md-12">
 
                         <label class="Fonts">New password</label>
-                        <input type="password" style="color:grey" class="form-control" placeholder="New password" />
+                        <input type="password" style="color:grey" class="form-control" asp-for="tbxNew_pw" placeholder="New password" />
+                        <span asp-validation-for="tbxNew_pw" class="text-danger"></span>
 
                     </div>
 

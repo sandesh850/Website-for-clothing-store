@@ -35,7 +35,44 @@ namespace VelvetVeogue.Pages
 
         public IActionResult OnPost()
         {
-            TblLogin = _appDb.TblLogins.Find(tbxCurrent_username);
+            TblLogin = _appDb.TblLogins.FirstOrDefault(x => x.Username == tbxCurrent_username);
+
+            var currentUseNm = "";
+            var currentPW = "";
+ 
+            if(TblLogin != null)
+            {
+                currentUseNm = TblLogin.Username;
+                currentPW = TblLogin.Password;
+
+            }
+
+            if(HttpContext.Session.GetString("LoginChecking") != "true")
+            {
+                if (currentUseNm.Equals(tbxCurrent_username) && currentPW == tbxCurrent_pw)
+                {
+
+                    HttpContext.Session.SetString("LoginChecking", "true");
+                }
+            }
+            else if(HttpContext.Session.GetString("LoginChecking") == "true")
+            {
+                _appDb.TblLogins.Remove(TblLogin);
+                _appDb.SaveChanges();
+
+                TblLogin tblLogin = new TblLogin
+                {
+                    Username = tbxNew_username,
+                    Password = tbxNew_pw
+
+                };
+                _appDb.TblLogins.Update(tblLogin);
+                _appDb.SaveChanges();
+            }
+
+
+
+
 
             return Page();
         }

@@ -21,5 +21,7 @@ namespace VelvetVeogue.Data
 
         public DbSet<Tbl_OrderDetails> Tbl_OrderDetails { get; set; }
 
+        public DbSet<Tbl_CompleteOrders> Tbl_CompleteOrders { get; set; }
+
     }
 }

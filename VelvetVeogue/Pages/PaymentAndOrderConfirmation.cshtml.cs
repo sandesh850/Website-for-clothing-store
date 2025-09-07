@@ -51,11 +51,15 @@ namespace VelvetVeogue.Pages
         {
             userWantSizeL = HttpContext.Session.GetString("id");
         }
-       
+
+        [BindProperty]
+        public DateTime? OrderDate { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
             var id = HttpContext.Session.GetInt32("id");
+
+            OrderDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
 
             TblItemDetails = await _appDb.Tbl_ItemDetails.FindAsync(id);
 
@@ -72,6 +76,7 @@ namespace VelvetVeogue.Pages
 
             }
 
+            //var CardNo = HttpContext.Session.GetInt32("tbxcardNo");
 
             var tblOrder_details = new Tbl_OrderDetails
             {
@@ -84,10 +89,12 @@ namespace VelvetVeogue.Pages
                 contactNo = tbxContactNo,
                 email = tbxEmail,
                 paymentMethod = cmbPaymentMethod,
-                CardNo = tbxcardNo,
+             
                 cardDate = tbxcardDate,
                 CVCNO = tbxcvcNo,
                 img =img,
+                date=OrderDate,
+                CardNo = tbxcardNo.ToString()
             };
 
 

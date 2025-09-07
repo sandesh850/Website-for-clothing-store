@@ -266,7 +266,7 @@ $("#SelectedPaymentMethod").on("change", function () {
                                +' <label>Card No</label>'
                             +'</div>'
                            +' <div class="col-9">'
-            + ' <input type="text" name="tbxcardNo" placeholder="Card No" class="form-control"/>'
+            + ' <input type="text" name = "tbxcardNo" placeholder="Card No" class="form-control"/>'
            
                             +'</div>'
                         +'</div>'

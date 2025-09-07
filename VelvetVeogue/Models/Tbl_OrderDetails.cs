@@ -38,10 +38,6 @@ namespace VelvetVeogue.Models
         [Required, Column(TypeName = "varchar(70)")]
         public string? paymentMethod { get; set; }
 
-
-        [Column(TypeName = "varchar(70)")]
-        public int? CardNo { get; set; }
-
         [Column(TypeName = "varchar(10)")]
         public string? cardDate { get; set; }
 
@@ -51,5 +47,11 @@ namespace VelvetVeogue.Models
 
         [Column(TypeName = "varchar(100)")]
         public int? CVCNO { get; set; }
+
+        [Column(TypeName ="Date")]
+        public DateTime? date { get; set; }
+
+        [Column(TypeName = "varchar(100)")]
+        public string? CardNo { get; set; }
     }
 }

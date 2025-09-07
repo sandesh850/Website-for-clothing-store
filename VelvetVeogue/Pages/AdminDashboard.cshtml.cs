@@ -20,10 +20,19 @@ namespace VelvetVeogue.Pages
 
         public List<Tbl_OrderDetails> orderdetails { get; set; }
 
+
+        [BindProperty]
+        public int LblInquiriesCount { get; set; }
+
+        public List<Tbl_Inquiries> inquiries { get; set; }
+
         public IActionResult OnGet()
         {
             orderdetails = _appDb.Tbl_OrderDetails.ToList();
             PendingOrders = orderdetails.Count;
+
+            inquiries = _appDb.Tbl_Inquiries.ToList();
+            LblInquiriesCount = inquiries.Count;
 
             return Page();
         }

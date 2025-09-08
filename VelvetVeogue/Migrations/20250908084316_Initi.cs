@@ -1,15 +1,41 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace VelvetVeogue.Migrations
 {
     /// <inheritdoc />
-    public partial class Initializig : Migration
+    public partial class Initi : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Tbl_CompleteOrders",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    category = table.Column<string>(type: "varchar(20)", nullable: false),
+                    ItemType = table.Column<string>(type: "varchar(50)", nullable: false),
+                    price = table.Column<decimal>(type: "money", nullable: false),
+                    sizes = table.Column<string>(type: "varchar(20)", nullable: false),
+                    color = table.Column<string>(type: "varchar(30)", nullable: false),
+                    email = table.Column<string>(type: "varchar(50)", nullable: false),
+                    address = table.Column<string>(type: "varchar(100)", nullable: false),
+                    contactNo = table.Column<string>(type: "varchar(20)", nullable: false),
+                    cardDate = table.Column<string>(type: "varchar(10)", nullable: true),
+                    img = table.Column<byte[]>(type: "varbinary", nullable: false),
+                    CVCNO = table.Column<string>(type: "varchar(100)", nullable: true),
+                    date = table.Column<DateTime>(type: "DateTime", nullable: false),
+                    CardNo = table.Column<string>(type: "varchar(100)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tbl_CompleteOrders", x => x.id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Tbl_ContactUS",
                 columns: table => new
@@ -31,8 +57,10 @@ namespace VelvetVeogue.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    sibject = table.Column<string>(type: "varchar(50)", nullable: false),
-                    Message = table.Column<string>(type: "text", nullable: true)
+                    subject = table.Column<string>(type: "varchar(50)", nullable: false),
+                    Message = table.Column<string>(type: "text", nullable: true),
+                    Name = table.Column<string>(type: "text", nullable: true),
+                    ContactNo = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -65,7 +93,21 @@ namespace VelvetVeogue.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    category = table.Column<string>(type: "varchar(20)", nullable: false),
+                    ItemType = table.Column<string>(type: "varchar(50)", nullable: false),
+                    price = table.Column<decimal>(type: "money", nullable: false),
+                    sizes = table.Column<string>(type: "varchar(20)", nullable: false),
+                    color = table.Column<string>(type: "varchar(30)", nullable: false),
+                    email = table.Column<string>(type: "varchar(50)", nullable: false),
+                    address = table.Column<string>(type: "varchar(100)", nullable: false),
+                    contactNo = table.Column<string>(type: "varchar(20)", nullable: false),
+                    paymentMethod = table.Column<string>(type: "varchar(70)", nullable: false),
+                    cardDate = table.Column<string>(type: "varchar(10)", nullable: true),
+                    img = table.Column<byte[]>(type: "varbinary", nullable: false),
+                    CVCNO = table.Column<string>(type: "varchar(100)", nullable: true),
+                    date = table.Column<DateTime>(type: "DateTime", nullable: false),
+                    CardNo = table.Column<string>(type: "varchar(100)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -90,6 +132,9 @@ namespace VelvetVeogue.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Tbl_CompleteOrders");
+
             migrationBuilder.DropTable(
                 name: "Tbl_ContactUS");
 

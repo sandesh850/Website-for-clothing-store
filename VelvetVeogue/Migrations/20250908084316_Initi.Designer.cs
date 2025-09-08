@@ -12,8 +12,8 @@ using VelvetVeogue.Data;
 namespace VelvetVeogue.Migrations
 {
     [DbContext(typeof(AppDb))]
-    [Migration("20250907122502_AddingDateColumnIntoTBlOrderDetails")]
-    partial class AddingDateColumnIntoTBlOrderDetails
+    [Migration("20250908084316_Initi")]
+    partial class Initi
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -71,6 +71,66 @@ namespace VelvetVeogue.Migrations
                     b.ToTable("TblLogins");
                 });
 
+            modelBuilder.Entity("VelvetVeogue.Models.Tbl_CompleteOrders", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("CVCNO")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("CardNo")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("ItemType")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("address")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("cardDate")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("category")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("color")
+                        .IsRequired()
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("contactNo")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<DateTime>("date")
+                        .HasColumnType("DateTime");
+
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<byte[]>("img")
+                        .IsRequired()
+                        .HasColumnType("varbinary");
+
+                    b.Property<decimal>("price")
+                        .HasColumnType("money");
+
+                    b.Property<string>("sizes")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Tbl_CompleteOrders");
+                });
+
             modelBuilder.Entity("VelvetVeogue.Models.Tbl_Inquiries", b =>
                 {
                     b.Property<int>("Id")
@@ -79,10 +139,16 @@ namespace VelvetVeogue.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("ContactNo")
+                        .HasColumnType("text");
+
                     b.Property<string>("Message")
                         .HasColumnType("text");
 
-                    b.Property<string>("sibject")
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("subject")
                         .IsRequired()
                         .HasColumnType("varchar(50)");
 
@@ -149,7 +215,7 @@ namespace VelvetVeogue.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("CardNo")
-                        .HasColumnType("varchar(70)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("ItemType")
                         .IsRequired()
@@ -174,8 +240,8 @@ namespace VelvetVeogue.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(20)");
 
-                    b.Property<DateTime?>("date")
-                        .HasColumnType("Date");
+                    b.Property<DateTime>("date")
+                        .HasColumnType("DateTime");
 
                     b.Property<string>("email")
                         .IsRequired()

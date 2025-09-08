@@ -105,7 +105,7 @@ namespace VelvetVeogue.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(20)");
 
-                    b.Property<DateTime?>("date")
+                    b.Property<DateTime>("date")
                         .HasColumnType("DateTime");
 
                     b.Property<string>("email")
@@ -136,10 +136,16 @@ namespace VelvetVeogue.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("ContactNo")
+                        .HasColumnType("text");
+
                     b.Property<string>("Message")
                         .HasColumnType("text");
 
-                    b.Property<string>("sibject")
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("subject")
                         .IsRequired()
                         .HasColumnType("varchar(50)");
 
@@ -231,8 +237,8 @@ namespace VelvetVeogue.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(20)");
 
-                    b.Property<DateTime?>("date")
-                        .HasColumnType("Date");
+                    b.Property<DateTime>("date")
+                        .HasColumnType("DateTime");
 
                     b.Property<string>("email")
                         .IsRequired()

@@ -29,9 +29,9 @@ namespace VelvetVeogue.Pages
             {
                 var TblInquiries = new Tbl_Inquiries
                 {
-                    sibject = tbxSubject,
+                    subject = tbxSubject,
                     Message = tbxMessage
-                   
+
                 };
 
                 _appDb.Tbl_Inquiries.Add(TblInquiries);

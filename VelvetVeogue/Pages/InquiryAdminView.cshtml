@@ -1,8 +1,7 @@
 ﻿@page
-@model VelvetVeogue.Pages.pendingOrdersModel
+@model VelvetVeogue.Pages.InquiryAdminViewModel
 @{
 }
-
 
 <div class="container">
 
@@ -16,17 +15,17 @@
 
                     <tr>
 
-                        <th scope="col">Image</th>
-                        <th scope="col"><strong>Category</strong></th>
-                        <th scope="col"><strong>Item Type</strong></th>
-                        <th scope="col"><strong>Price</strong></th>
+                      @*   <th scope="col">Image</th> *@
+                        <th scope="col"><strong>Subject</strong></th>
+                        <th scope="col"><strong>Message</strong></th>
+                       @*  <th scope="col"><strong>Price</strong></th>
                         <th scope="col"><strong>Color</strong></th>
                         <th scope="col"><strong>Size</strong></th>
                         <th scope="col"><strong>Address</strong></th>
                         <th scope="col"><strong>CNO</strong></th>
                         <th scope="col"><strong>Email</strong></th>
                         <th scope="col"><strong>Date</strong></th>
-                        <th scope="col"><strong>Action</strong></th>
+                        <th scope="col"><strong>Action</strong></th> *@
 
 
                     </tr>
@@ -35,10 +34,10 @@
 
                 <tbody>
 
-                     @foreach (var data in Model.tblPending)
+                    @foreach (var data in Model.Inquiriestbl)
                     {
                         <tr>
-                            <td>
+                           @*  <td>
                                 @if (data.img != null && data.img.Length > 0)
                                 {
                                     <img src="data:image/png;base64,@Convert.ToBase64String(data.img)" style="width:80px;height:80px;object-fit:cover" alt="Item Image" />
@@ -48,10 +47,10 @@
                                     <span>No Image Found</span>
                                 }
 
-                            </td>
-                            <td>@(data.category)</td>
-                            <td>@(data.ItemType)</td>
-                            <td>@(data.price.ToString() ?? "N/A")</td>
+                            </td> *@
+                            <td>@(data.subject)</td> 
+                            <td>@(data.Message)</td>
+                           @*  <td>@(data.price.ToString() ?? "N/A")</td>
                             <td>@(data.color)</td>
                             <td>@(data.sizes ?? "N/A")</td>
                             <td>@(data.address ?? "N/A")</td>
@@ -65,12 +64,12 @@
                                 <div class="d-flex">
 
                                     <a asp-page="completeOrders" asp-route-id="@data.id" class="btn btn-warning">Complete</a>
-                                   @*  <a type="button" class="btn btn-danger" asp-route-id="@data.id" asp-page="RemoveItemDetails">Remove</a> *@
+                                  
 
                                 </div>
 
                             </td>
-
+ *@
                         </tr>
 
                     } 

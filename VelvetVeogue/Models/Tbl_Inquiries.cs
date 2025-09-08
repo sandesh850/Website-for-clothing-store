@@ -10,10 +10,16 @@ namespace VelvetVeogue.Models
 
         [Required]
         [Column(TypeName ="varchar(50)")]
-        public string sibject { get; set; } = string.Empty;
+        public string subject { get; set; } = string.Empty;
 
         
         [Column(TypeName = "text")]
-        public string? Message { get; set; } // Making null value allow column
+        public string? Message { get; set; } 
+
+        [Column(TypeName = "text")]
+        public string? Name { get; set; }
+
+        [Column(TypeName = "text")]
+        public string? ContactNo { get; set; } 
     }
 }

@@ -93,7 +93,7 @@ namespace VelvetVeogue.Pages
                 cardDate = tbxcardDate,
                 CVCNO = tbxcvcNo,
                 img =img,
-                date=OrderDate,
+                date=Convert.ToDateTime(OrderDate),
                 CardNo = tbxcardNo.ToString()
             };
 

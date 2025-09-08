@@ -48,8 +48,8 @@ namespace VelvetVeogue.Models
         [Column(TypeName = "varchar(100)")]
         public int? CVCNO { get; set; }
 
-        [Column(TypeName ="Date")]
-        public DateTime? date { get; set; }
+        [Column(TypeName = "DateTime")]
+        public DateTime date { get; set; }
 
         [Column(TypeName = "varchar(100)")]
         public string? CardNo { get; set; }

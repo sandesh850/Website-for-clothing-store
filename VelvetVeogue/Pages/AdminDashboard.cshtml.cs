@@ -26,6 +26,15 @@ namespace VelvetVeogue.Pages
 
         public List<Tbl_Inquiries> inquiries { get; set; }
 
+
+        public int completedOrderCountThisMonth { get; set; }
+        public List<Tbl_CompleteOrders> CompleteOrdersTbl { get; set; }
+
+        //Complete orders this year
+        public int completedOrderCountThisYear { get; set; }
+        public List<Tbl_CompleteOrders> CompleteOrdersTblThisYear { get; set; }
+
+
         public IActionResult OnGet()
         {
             orderdetails = _appDb.Tbl_OrderDetails.ToList();
@@ -33,6 +42,15 @@ namespace VelvetVeogue.Pages
 
             inquiries = _appDb.Tbl_Inquiries.ToList();
             LblInquiriesCount = inquiries.Count;
+
+            var month = DateTime.Now.Month;
+            var year = DateTime.Now.Year;
+
+            CompleteOrdersTblThisYear = _appDb.Tbl_CompleteOrders.Where(detail => detail.date.Year == year).ToList();
+            completedOrderCountThisYear = CompleteOrdersTblThisYear.Count();
+
+            CompleteOrdersTbl = _appDb.Tbl_CompleteOrders.Where(details => details.date.Month == month && details.date.Year == year).ToList();
+            completedOrderCountThisMonth = CompleteOrdersTbl.Count();
 
             return Page();
         }

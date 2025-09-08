@@ -14,16 +14,16 @@ namespace VelvetVeogue.Pages
             _appDb = appDb;
         }
 
-        public Tbl_OrderDetails OrderDetails { get; set; }
+        public Tbl_OrderDetails? OrderDetails { get; set; }
 
-        public  async Task<IActionResult> OnPostAsync(int id)
+        public  async Task<IActionResult> OnGetAsync(int id)
         {
            
             OrderDetails = await _appDb.Tbl_OrderDetails.FindAsync(id);
 
             if (OrderDetails == null)
             {
-                return RedirectToPage("index"); // handle missing record safely
+                return RedirectToPage("/pendingOrders"); // handle missing record safely
             }
 
             Tbl_CompleteOrders completeOrders = new Tbl_CompleteOrders
@@ -44,15 +44,15 @@ namespace VelvetVeogue.Pages
             };
 
             _appDb.Tbl_CompleteOrders.Add(completeOrders);
-            _appDb.SaveChanges();
+            await _appDb.SaveChangesAsync();
 
             // remove item
             var item = await _appDb.Tbl_OrderDetails.FindAsync(id);
 
             _appDb.Tbl_OrderDetails.Remove(item);
-            _appDb.SaveChanges();
+            await _appDb.SaveChangesAsync();
 
-            return RedirectToAction("pendingOrders");
+            return RedirectToPage("/pendingOrders");
 
         }
     }

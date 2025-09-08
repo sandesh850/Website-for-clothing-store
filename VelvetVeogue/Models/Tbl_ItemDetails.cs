@@ -24,7 +24,7 @@ namespace VelvetVeogue.Models
         public string Color {  get; set; } = string.Empty;
 
         [Required]
-        [Column(TypeName = "varchar(10)")]
+        [Column(TypeName = "varchar(30)")]
         public string size { get; set; } = string.Empty;
 
         [Required]

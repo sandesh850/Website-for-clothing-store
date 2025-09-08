@@ -30,6 +30,11 @@ namespace VelvetVeogue.Pages
 
             TblLogin = _appDb.TblLogins.ToList();
 
+            if (TblLogin.Count <= 0)
+            {
+                return RedirectToPage("SignUp");
+            }
+
             if(TblLogin != null)
             {
                 existing_username = TblLogin[0].Username;

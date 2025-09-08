@@ -15,18 +15,11 @@
 
                     <tr>
 
-                      @*   <th scope="col">Image</th> *@
+                        <th scope="col"><strong>Name</strong></th>
+                        <th scope="col"><strong>Contact No</strong></th>
                         <th scope="col"><strong>Subject</strong></th>
                         <th scope="col"><strong>Message</strong></th>
-                       @*  <th scope="col"><strong>Price</strong></th>
-                        <th scope="col"><strong>Color</strong></th>
-                        <th scope="col"><strong>Size</strong></th>
-                        <th scope="col"><strong>Address</strong></th>
-                        <th scope="col"><strong>CNO</strong></th>
-                        <th scope="col"><strong>Email</strong></th>
-                        <th scope="col"><strong>Date</strong></th>
-                        <th scope="col"><strong>Action</strong></th> *@
-
+                       
 
                     </tr>
 
@@ -48,6 +41,8 @@
                                 }
 
                             </td> *@
+                            <td>@(data.Name)</td>
+                            <td>@(data.ContactNo)</td>
                             <td>@(data.subject)</td> 
                             <td>@(data.Message)</td>
                            @*  <td>@(data.price.ToString() ?? "N/A")</td>

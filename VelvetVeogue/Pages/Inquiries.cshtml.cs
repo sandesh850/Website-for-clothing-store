@@ -14,6 +14,12 @@ namespace VelvetVeogue.Pages
         [BindProperty, Required(ErrorMessage = "Please Type the Message")]
         public string tbxMessage { get; set; } = string.Empty;
 
+        [BindProperty, Required(ErrorMessage = "Please Type the Name")]
+        public string tbxName { get; set; } = string.Empty;
+
+        [BindProperty, Required(ErrorMessage = "Please Type the Contact No")]
+        public string tbxContactNo { get; set; } = string.Empty;
+
 
 
         private readonly AppDb _appDb;
@@ -29,6 +35,8 @@ namespace VelvetVeogue.Pages
             {
                 var TblInquiries = new Tbl_Inquiries
                 {
+                    Name = tbxName,
+                    ContactNo = tbxContactNo,
                     subject = tbxSubject,
                     Message = tbxMessage
 

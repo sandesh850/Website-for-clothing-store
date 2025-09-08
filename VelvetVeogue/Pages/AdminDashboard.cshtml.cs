@@ -34,6 +34,8 @@ namespace VelvetVeogue.Pages
         public int completedOrderCountThisYear { get; set; }
         public List<Tbl_CompleteOrders> CompleteOrdersTblThisYear { get; set; }
 
+        // contact us list
+        public List<TblContactUS> tblcontactUSs { get; set; }
 
         public IActionResult OnGet()
         {
@@ -51,6 +53,9 @@ namespace VelvetVeogue.Pages
 
             CompleteOrdersTbl = _appDb.Tbl_CompleteOrders.Where(details => details.date.Month == month && details.date.Year == year).ToList();
             completedOrderCountThisMonth = CompleteOrdersTbl.Count();
+
+            // Use retrieve contact us table details
+            tblcontactUSs = _appDb.Tbl_ContactUS.ToList();
 
             return Page();
         }

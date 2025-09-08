@@ -23,7 +23,7 @@
                     <div class="col-12 col-md-6 MyOrdersCard01">
 
                         <div>
-                            <img src="/img/Empty.jpg" class="MyOrdersCardImg" />
+                            <img src="/img/pending.png" class="MyOrdersCardImg" />
                         </div>
                        
                     </div>
@@ -54,7 +54,7 @@
                         </div>
 
                         <!--btn details-->
-                        <div class="row" style="padding-top:3%">
+                        <div class="row" style="padding-top:3%;padding-bottom:3%">
 
                             <div class="col-12 col-md-12 MyOrdersCard01">
                                 <a class="btn btn-primary" asp-page="pendingOrders" style="background-color:black;border-color:black;width:90%">Details</a>
@@ -74,7 +74,7 @@
         <div class="col-12 col-md-6">
 
             <!--complete orders-->
-            <div class="MyOrdersCard" style="padding-top:3%;background-color:#01A5D2">
+            <div class="MyOrdersCard" style="padding-top:3%;background-color:yellow">
 
                 <!--Sub row-->
                 <div class="row ">
@@ -84,7 +84,7 @@
                     <div class="col-12 col-md-6 MyOrdersCard01">
 
                         <div>
-                            <img src="/img/Empty.jpg" class="MyOrdersCardImg" />
+                            <img src="/img/completeMonth.png" class="MyOrdersCardImg" />
                         </div>
 
                     </div>
@@ -132,7 +132,7 @@
         <div class="col-12 col-md-6">
 
             <!--Inquiries orders-->
-            <div class="MyOrdersCard" style="padding-top:3%;background-color:#15C375">
+            <div class="MyOrdersCard" style="padding-top:3%;background-color:palegreen">
 
                 <!--Sub row-->
                 <div class="row ">
@@ -142,7 +142,7 @@
                     <div class="col-12 col-md-6 MyOrdersCard01">
 
                         <div>
-                            <img src="/img/Empty.jpg" class="MyOrdersCardImg" />
+                            <img src="/img/Inquiry.png" class="MyOrdersCardImg" />
                         </div>
 
                     </div>
@@ -173,7 +173,7 @@
                         </div>
 
                         <!--btn details-->
-                        <div class="row" style="padding-top:3%">
+                        <div class="row" style="padding-top:3%;padding-bottom:3%">
 
                             <div class="col-12 col-md-12 MyOrdersCard01">
                                 <a class="btn btn-primary" asp-page="InquiryAdminView" style="background-color:black;border-color:black;width:90%">Check</a>
@@ -193,7 +193,7 @@
         <div class="col-12 col-md-6">
 
             <!--complete orders (this year)-->
-            <div class="MyOrdersCard" style="padding-top:3%;background-color:#2A89AF">
+            <div class="MyOrdersCard" style="padding-top:3%;background-color:cornflowerblue">
 
                 <!--Sub row-->
                 <div class="row ">
@@ -203,7 +203,7 @@
                     <div class="col-12 col-md-6 MyOrdersCard01">
 
                         <div>
-                            <img src="/img/Empty.jpg" class="MyOrdersCardImg" />
+                            <img src="/img/completeYear.png" class="MyOrdersCardImg" />
                         </div>
 
                     </div>
@@ -240,6 +240,50 @@
             </div>
 
         </div>
+
+    </div>
+
+    <!--Row 03 Topic (Table area)-->
+    <div class="row">
+
+        <div class="col-12 col-md-12 text-center">
+            <label style="font-size:200%;" class="fw-bold">Customer Messages</label>
+        </div> 
+
+    </div>
+
+    <!--Row 04 Contact US tabel detail (Customer messages)-->
+    <div class="row" style="margin-bottom:3%;margin-top:5%">
+
+        <div class="col-12 col-md-12">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach(var data in Model.tblcontactUSs)
+                    {
+                        <tr>
+                            <td>@(data.FullName)</td>
+                            <td>@(data.Email)</td>
+                            <td>@(data.message)</td>
+                        </tr>
+                    }
+
+                    
+
+                </tbody>
+            </table>
+
+        </div>
+
+       
 
     </div>
 

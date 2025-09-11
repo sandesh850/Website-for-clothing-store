@@ -416,3 +416,38 @@ body {
       
     }
 }
+
+/*PDP page*/
+.PDPFonts {
+    font-size: 150%;
+}
+
+.PDPFonts02 {
+    font-size: 100%;
+}
+
+.PaymentPAgeBorder {
+    border-style: solid;
+    border-color: black;
+    width: 50%;
+    border-radius: 25px;
+    margin-bottom: 3%
+}
+
+@media (max-width:325px) {
+    .PaymentPAgeBorder {
+        width: 100%;
+    }
+}
+
+@media (max-width:377px) {
+    .PaymentPAgeBorder {
+        width: 100%;
+    }
+}
+
+@media (max-width:426px) {
+    .PaymentPAgeBorder {
+        width: 100%;
+    }
+}

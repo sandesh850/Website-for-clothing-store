@@ -5,26 +5,26 @@
 
 <form method="post">
 
-    <div class="container ">
+    <div class="container d-flex justify-content-center">
         <!--Main Row-->
-        <div class="row justify-content-center">
+        <div class="row  PaymentPAgeBorder">
 
             <!--Border (card)-->
-            <div class="col-12" style="border-style:solid;border-color:black;width:50%;border-radius:25px;margin-bottom:3%">
+            <div class="col-12 col-md-12">
 
                 <!--Email-->
                 <div class="row pt-3">
 
                     <!--lblEmail-->
-                    <div class="col-3">
+                    <div class="col-12 col-md-3">
                         <label>Email</label>
 
                     </div>
 
                     <!--tbxEmail-->
-                    <div class="col-9">
-                        <input type="email" placeholder="Email" asp-for="tbxEmail"  class="form-control" />
-                       
+                    <div class="col-12 col-md-9">
+                        <input type="email" placeholder="Email" asp-for="tbxEmail" class="form-control" />
+
                     </div>
 
                 </div>
@@ -33,14 +33,14 @@
                 <div class="row pt-3">
 
                     <!--lblAddress-->
-                    <div class="col-3">
+                    <div class="col-md-3 col-12">
                         <label>Address</label>
 
                     </div>
 
                     <!--tbxAddress-->
-                    <div class="col-9">
-                        <textarea placeholder="Address" asp-for="tbxaddress" rows="3" style="resize:none" class="form-control" ></textarea>
+                    <div class="col-md-9 col-12">
+                        <textarea placeholder="Address" asp-for="tbxaddress" rows="3" style="resize:none" class="form-control"></textarea>
                         <span asp-validation-for="tbxaddress" class="text-danger"></span>
                     </div>
 
@@ -51,13 +51,13 @@
                 <div class="row pt-3">
 
                     <!--lblContact No-->
-                    <div class="col-3">
+                    <div class="col-md-3 col-12">
                         <label>Contact No</label>
 
                     </div>
 
                     <!--tbxContact No-->
-                    <div class="col-9">
+                    <div class="col-md-9 col-12">
                         <input type="text" placeholder="Contact No" asp-for="tbxContactNo" class="form-control" />
                         <span asp-validation-for="tbxContactNo" class="text-danger"></span>
                     </div>
@@ -68,35 +68,32 @@
                 <div class="row pt-3 pb-3">
 
                     <!--lblPayment method-->
-                    <div class="col-3">
+                    <div class="col-md-3 col-12">
                         <label>Payment method</label>
 
                     </div>
 
                     <!--tbxPayment method-->
-                    <div class="col-9">
+                    <div class="col-md-9 col-12">
                         <select class="form-select" asp-for="cmbPaymentMethod" id="SelectedPaymentMethod">
                             <option disabled selected>Please select</option>
                             <option>Cash On Delivery</option>
                             <option>Online Payment</option>
                         </select>
-                        
+
                     </div>
 
                 </div>
 
                 <!--hr line-->
-                <div class="row" >
-                    <div class="col-12">
-                        <hr/>
+                <div class="row">
+                    <div class="col-12 col-md-12">
+                        <hr />
                     </div>
                 </div>
 
                 <!--Selected Payment Method-->
                 <div class="row pb-3" id="BottomPartOfTheCard">
-
-                    
-
                 </div>
 
             </div>
@@ -104,6 +101,7 @@
         </div>
 
     </div>
+
 
    
 </form>

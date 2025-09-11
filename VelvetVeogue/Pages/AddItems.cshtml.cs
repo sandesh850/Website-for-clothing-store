@@ -24,7 +24,7 @@ namespace VelvetVeogue.Pages
         public string tbxCategoryName { get; set; }
 
         [BindProperty]
-        public string tbxName { get; set; }
+        public string? tbxName { get; set; }
 
         [BindProperty, Required(ErrorMessage = "Please enter the color")]
         public string tbxcolor { get; set; }

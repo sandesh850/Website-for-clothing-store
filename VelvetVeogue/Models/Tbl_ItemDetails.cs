@@ -17,7 +17,7 @@ namespace VelvetVeogue.Models
         public string CategoryName { get; set; } = string.Empty;
 
         [Column(TypeName = "varchar(30)")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; } = string.Empty;
 
         [Required]
         [Column(TypeName = "varchar(20)")]

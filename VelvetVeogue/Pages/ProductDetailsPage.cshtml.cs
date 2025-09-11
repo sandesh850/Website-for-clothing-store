@@ -111,7 +111,7 @@ namespace VelvetVeogue.Pages
                 ItemTypePost = Tbl_ItemDetails.ItemType;
                 CategoryNamePost = Tbl_ItemDetails.CategoryName;
                 Price = Tbl_ItemDetails.Price;
-                color02 = Tbl_ItemDetails.Color;
+                //color02 = Tbl_ItemDetails.Color;
                 ID = Tbl_ItemDetails.Id;
                 //SelectImg = Tbl_ItemDetails.img; 
             }

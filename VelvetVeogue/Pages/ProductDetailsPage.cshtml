@@ -11,13 +11,13 @@
 
             <!--Left side (img)-->
             <div class="col-6 col-md-6 col-sm-6">
-                @if(Model.Tbl_ItemDetails.img != null)
+                @if (Model.Tbl_ItemDetails.img != null)
                 {
                     <img src="data:image/png;base64,@Convert.ToBase64String(Model.Tbl_ItemDetails.img)" style="width:450px; height:550px;" />
-                   @*  <input type="text" hidden asp-for="SelectImg" /> *@
+                    @*  <input type="text" hidden asp-for="SelectImg" /> *@
                 }
-                
-                
+
+
 
             </div>
 
@@ -26,9 +26,9 @@
 
                 <!--Sub row 01-->
                 <div class="row" style="padding-right:71%">
-                    <div class="col-12 col-md-12 col-sm-12" >
-                       @*  <label asp-for="ItemTypePost">@Model.ItemType</label> *@
-                        <input asp-for="ItemTypePost" hidden/>
+                    <div class="col-12 col-md-12 col-sm-12">
+                        @*  <label asp-for="ItemTypePost">@Model.ItemType</label> *@
+                        <input asp-for="ItemTypePost" hidden />
                         <input asp-for="ID" hidden />
                         <span>@Model.ItemType</span>
 
@@ -73,50 +73,57 @@
 
                     </div>
 
-                   
+
                 </div>
 
                 <!--Sub row 06-->
                 <div class="row " style="padding-left:8%;padding-top:3%">
 
                     <div class="col-12 col-md-12 col-sm-12 gap-5">
-                          <input type="text" style="width:50%" placeholder="Type the sizes you want(e.g. S M)" asp-for="tbxSizesUserWant"  class="form-control"/>
-                         @*  <span asp-validation-for="tbxSizesUserWant" class="text-danger text-start"></span> *@
+                        <input type="text" style="width:50%" placeholder="Type the sizes you want(e.g. S M)" asp-for="tbxSizesUserWant" class="form-control" />
+                        @*  <span asp-validation-for="tbxSizesUserWant" class="text-danger text-start"></span> *@
                     </div>
 
 
                 </div>
 
                 <!--Sub row 07-->
-                <div class="row" style="padding-right:74%;padding-top:5%">
-                    <div class="col-12 col-md-12 col-sm-12">
-                        <label class="fw-bold" style="font-size:23px">Color</label>
+                <div class="row" style="padding-top:5%;padding-left:2%">
+                    <div class="col-12 col-md-3">
+                        <label class="fw-bold" style="font-size:150%">Color</label>
 
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="text" readonly style="width:36%" class="form-control" asp-for="Tbl_ItemDetails.Color" />
                     </div>
                 </div>
 
                 <!--Sub row 08-->
-                <div class="row" style="padding-left:8%;padding-top:3%">
-                    <div class="col-12 col-md-12 col-sm-12">
-                        <input type="text" class="form-control" style="color:gray;width:50%;" readonly asp-for="Tbl_ItemDetails.Color" placeholder="Color"/>
-                        <input type="text" asp-for="color02" hidden />
+                <div class="row">
+                    <div class="col-12 col-md-12" style="padding-left:9%;padding-top:3%">
+
+                        <input type="text" style="width:50%" class="form-control" asp-for="color02" placeholder="Please Type the color" />
+
 
                     </div>
+
                 </div>
-             @*    <input type="hidden"  /> *@
+                @*    <input type="hidden"  /> *@
                 <!--Sub row 09 | button -->
                 <div class="row" style="padding-left:7%;padding-top:6%">
                     <div class="col-12 col-md-12 col-sm-12">
-                       
-                      
+
+
                         <button type="submit" style="width:90%;border-radius:25px"
-                           class="btn btn-primary">Buy Now</button>
-                          
-                      
+                                class="btn btn-primary">
+                            Buy Now
+                        </button>
+
+
 
                     </div>
                 </div>
-               
+
 
             </div>
 

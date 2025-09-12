@@ -451,3 +451,31 @@ body {
         width: 100%;
     }
 }
+
+/*Inquiries page*/
+.Bdr {
+    border-style: solid;
+    border-color: black;
+    border-radius: 25px;
+    width: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%
+}
+
+@media (max-width:325px) {
+    .Bdr {
+        width: 100%;
+    }
+}
+
+@media (max-width:377px) {
+    .Bdr {
+        width: 100%;
+    }
+}
+
+@media (max-width:426px) {
+    .Bdr {
+        width: 100%;
+    }
+}
